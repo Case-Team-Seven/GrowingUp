@@ -53,12 +53,13 @@ export default class Example extends React.Component {
                 GitHub
                 </NavLink>
               </NavItem>
+              
 
               {/* Pull right */}
               <UncontrolledDropdown nav inNavbar>
 
                 <DropdownToggle nav caret>
-                  Your Account
+                  Your Profile
                 </DropdownToggle>
 
 
