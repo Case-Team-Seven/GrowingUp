@@ -1,71 +1,41 @@
-import React from "react";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBModalFooter,
-  MDBIcon,
-  MDBCardHeader,
-  MDBBtn,
-  MDBInput
-} from "mdbreact";
+import React from 'react';
+import './LogIn.css';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-const FormPage = () => {
-  return (
-    <MDBContainer>
-      <MDBRow>
-        <MDBCol md="6">
-          <MDBCard>
-            <MDBCardBody>
-              <MDBCardHeader className="form-header deep-blue-gradient rounded">
-                <h3 className="my-3">
-                  <MDBIcon icon="lock" /> Login:
-                </h3>
-              </MDBCardHeader>
-              <form>
-                <div className="grey-text">
-                  <MDBInput
-                    label="Type your email"
-                    icon="envelope"
-                    group
-                    type="email"
-                    validate
-                    error="wrong"
-                    success="right"
-                  />
-                  <MDBInput
-                    label="Type your password"
-                    icon="lock"
-                    group
-                    type="password"
-                    validate
-                  />
-                </div>
-
-              <div className="text-center mt-4">
-                <MDBBtn
-                  color="light-blue"
-                  className="mb-3"
-                  type="submit"
-                >
-                  Login
-                </MDBBtn>
-              </div>
-              </form>
-              <MDBModalFooter>
-                <div className="font-weight-light">
-                  <p>Not a member? Sign Up</p>
-                  <p>Forgot Password?</p>
-                </div>
-              </MDBModalFooter>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-  );
-};
-
-export default FormPage;
+export default class Example extends React.Component {
+  render() {
+    return (
+      <Form className='logInForm'>
+        <Label for="title" className="mr-sm-2">
+            <h2>Log In</h2>
+        </Label>
+        <FormGroup id='formGroup1' className="mb-2 mr-sm-2 mb-sm-0">
+          <Label for="exampleEmail" className="mr-sm-2">
+            <strong>Email</strong>
+          </Label>
+          <Input type="email" name="email" id="exampleEmail" placeholder="something@idk.cool" />
+        </FormGroup>
+        <FormGroup id='formGroup2' className="mb-2 mr-sm-2 mb-sm-0">
+          <Label for="examplePassword" className="mr-sm-2">
+            <strong>Password</strong>
+          </Label>
+          <Input type="password" name="password" id="examplePassword" placeholder="don't tell!" />
+        </FormGroup>
+        <br></br>
+        <Button className="logInSubmitButton">
+          <strong>Sign In</strong>
+        </Button>
+        <br></br>
+        <a className="forgotPasswordLink">
+          <strong>Forgot Password!</strong>
+        </a>
+        <br></br>
+        <br></br>
+        <a className="signUpLinkButton">
+        Dont have an account..   <strong> Sign Up</strong>
+        </a>
+        
+      </Form>
+    );
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavTop.css'; 
 import {
   Collapse,
   Navbar,
@@ -20,6 +21,8 @@ export default class Example extends React.Component {
     this.state = {
       isOpen: false
     };
+
+    {/* isOpen prop determines whether the modal should be visible. The toggle callback can be used to toggle the value of isOpen in the controlling component. */}
   }
   toggle() {
     this.setState({
@@ -30,20 +33,35 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Growing Up</NavbarBrand>
+           {/* Brandname */}
+          <NavbarBrand href="/">
+          Grownupish
+          </NavbarBrand>
+            {/* Add toggler to auto-collapse */}
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
+
+             {/*Pull left */}
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Link Option</NavLink>
+                <NavLink href="/components/">
+                  Link Option
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="https://github.com/reactstrap/reactstrap">
+                GitHub
+                </NavLink>
               </NavItem>
+
+              {/* Pull right */}
               <UncontrolledDropdown nav inNavbar>
+
                 <DropdownToggle nav caret>
                   Your Account
                 </DropdownToggle>
+
+
                 <DropdownMenu right>
                   <DropdownItem>
                     Option 1 (LogIn / View Your Profile ( When logged in))
