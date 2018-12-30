@@ -31,10 +31,11 @@ export default class Example extends React.Component {
         </a>
         <br></br>
         <br></br>
-        <a className="signUpLinkButton">
-        Dont have an account..   <strong> Sign Up</strong>
-        </a>
-        
+        <p>Dont have an account.   <nbsp></nbsp> 
+          <a className="signUpLinkButton" onClick="" href="">
+            <strong>Sign Up</strong>
+          </a>
+        </p>
       </Form>
     );
   }
