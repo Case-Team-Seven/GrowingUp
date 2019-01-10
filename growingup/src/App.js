@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import NavTop from "./components/Nav/NavTop/NavTop";
 import LogIn from "./components/LogIn/LogIn";
 import CategoryList from "./components/CategoryList/CategoryList";
+import ForumPost from "./components/Forums/ForumPost";
 import './App.css';
 import { Button } from 'reactstrap';
 
@@ -17,8 +18,10 @@ class App extends Component {
           <LogIn />
         </div>
         <div className="logInContainer">
-          <h1>Options for the Main Category list</h1>
           <CategoryList />
+        </div>
+        <div className="ForumsContainer">
+          <ForumPost />
         </div>
       </div>
     );
