@@ -4,6 +4,8 @@ import NavTop from "./components/Nav/NavTop/NavTop";
 import LogIn from "./components/LogIn/LogIn";
 import CategoryList from "./components/CategoryList/CategoryList";
 import ForumPost from "./components/Forums/ForumPost";
+import ForumForm from "./components/Forums/ForumForm";
+import NewPostButton from './components/Button/NewPost/NewPostButton';
 import './App.css';
 import { Button } from 'reactstrap';
 
@@ -13,6 +15,7 @@ class App extends Component {
       <div className="mainContainer">
         <div className="header">
           <NavTop />
+          <NewPostButton />
         </div>
         <div className="logInContainer">
           <LogIn />
@@ -22,6 +25,9 @@ class App extends Component {
         </div>
         <div className="ForumsContainer">
           <ForumPost />
+        </div>
+        <div className="ForumsContainer">
+          <ForumForm />
         </div>
       </div>
     );

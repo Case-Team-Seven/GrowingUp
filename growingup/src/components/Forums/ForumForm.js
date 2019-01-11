@@ -5,7 +5,7 @@ import './ForumForm.css';
 export default class Example extends React.Component {
   render() {
     return (
-      <Form>
+      <Form className="forumForm">
         <FormGroup>
           <Label for="exampleSelectMulti">Select Multiple</Label>
           <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>

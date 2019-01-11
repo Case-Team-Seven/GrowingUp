@@ -31,7 +31,7 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="navBarTop">
         <Navbar color="light" light expand="md">
            {/* Brandname */}
           <NavbarBrand href="/">
