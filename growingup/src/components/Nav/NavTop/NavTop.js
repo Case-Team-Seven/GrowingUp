@@ -32,7 +32,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className="navBarTop">
-        <Navbar color="light" light expand="md">
+        <Navbar  background-color="white" expand="md">
            {/* Brandname */}
           <NavbarBrand href="/">
           Grownupish

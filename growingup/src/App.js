@@ -13,9 +13,10 @@ class App extends Component {
   render() {
     return ( 
       <div className="mainContainer">
-        <div className="header">
+        <div className="header" id="masthead">
           <NavTop />
           <NewPostButton />
+          
         </div>
         <div className="logInContainer">
           <LogIn />

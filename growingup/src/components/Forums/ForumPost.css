@@ -1,5 +1,9 @@
 .forumCard {
     padding: 25px;
     margin: 368px;
-    margin-top: auto;
+    margin-top: 1em;
+}
+
+Col {
+    display:flex;
 }
