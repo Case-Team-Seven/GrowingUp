@@ -20,6 +20,8 @@ class App extends Component {
           <h1>Options for the Main Category list</h1>
           <CategoryList />
         </div>
+        <div class name = "signUp">
+        </div>
       </div>
     );
   }

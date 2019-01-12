@@ -19,6 +19,7 @@ class Example extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
+            Log In:
             
             </CardBody>
           </Card>
