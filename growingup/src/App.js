@@ -22,6 +22,8 @@ class App extends Component {
         </div>
         <div class name = "signUp">
         </div>
+        <div class name = "profileId">
+        </div>
       </div>
     );
   }
