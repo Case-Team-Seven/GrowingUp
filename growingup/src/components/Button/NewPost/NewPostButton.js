@@ -27,7 +27,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div class="newPostDiv">
-        <Button id="new-post-button" outline color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }} className="createPost">Create Post</Button>
+        <Button  outline color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }} className="createPost">Create Post</Button>
         <Collapse isOpen={this.state.collapse}>
           <ForumPost />
         </Collapse>
