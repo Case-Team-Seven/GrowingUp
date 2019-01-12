@@ -3,6 +3,8 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './ForumForm.css';
 
 export default class Example extends React.Component {
+
+
   render() {
     return (
       <Form className="forumForm">

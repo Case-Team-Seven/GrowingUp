@@ -29,7 +29,7 @@ import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 const Example = (props) => {
   return (
-    <Row>
+    <Row id="testRow">
       <Col sm="6">
         <Card body>
           <CardTitle>Special Title Treatment</CardTitle>

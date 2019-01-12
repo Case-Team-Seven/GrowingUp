@@ -12,22 +12,22 @@ import { Button } from 'reactstrap';
 class App extends Component {
   render() {
     return ( 
-      <div className="mainContainer">
+      <div className="mainContainer" href="/">
         <div className="header" id="masthead">
-          <NavTop />
-          <NewPostButton />
+          <NavTop className="navTop" />
+          <NewPostButton className="newPostButton"/>
           
         </div>
-        <div className="logInContainer">
+        <div className="logInContainer" href="/">
           <LogIn />
         </div>
         <div className="logInContainer">
           <CategoryList />
         </div>
-        <div className="ForumsContainer">
+        <div className="forumsContainer">
           <ForumPost />
         </div>
-        <div className="ForumsContainer">
+        <div className="forumsFormContainer">
           <ForumForm />
         </div>
       </div>
