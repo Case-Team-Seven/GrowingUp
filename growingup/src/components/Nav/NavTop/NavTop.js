@@ -31,8 +31,8 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
+      <div className="navBarTop">
+        <Navbar  background-color="white" expand="md">
            {/* Brandname */}
           <NavbarBrand href="/">
           Grownupish

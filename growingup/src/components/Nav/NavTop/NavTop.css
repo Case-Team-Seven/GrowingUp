@@ -1,0 +1,39 @@
+.navBarTop {
+    position: relative;
+    margin-top: auto;  
+}
+
+.nav-bar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+.nav-link {
+    color:white;
+}
+
+.navbar-brand {
+    color:white;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 7px;
+    margin-left: 353px;
+    list-style-type: none;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    -webkit-margin-start: 23em;
+    margin-inline-start: 17em;
+    -webkit-margin-end: -34em;
+    margin-inline-end: -32em;
+    -webkit-margin-before: 9.1em;
+    margin-block-start: 9.1em;
+}
