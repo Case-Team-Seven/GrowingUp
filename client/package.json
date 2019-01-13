@@ -1,13 +1,19 @@
 {
-  "name": "growingup",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": ">=3",
+    "node": "10.15"
+  },
+  "proxy": "http://localhost:3001/",
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "axios": "^0.18.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2",
-    "reactstrap": "^6.5.0"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.3",
+    "reactstrap": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
