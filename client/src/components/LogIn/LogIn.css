@@ -1,3 +1,4 @@
+
 .logInForm {
     color: whitesmoke;
     background-color: red;
@@ -6,8 +7,8 @@
 }
 
 #formGroup1, #formGroup2 {
- line-height: 30px;
- padding-bottom: 20px;
+    line-height: 30px;
+    padding-bottom: 20px;
 }
 
 .logInSubmitButton {

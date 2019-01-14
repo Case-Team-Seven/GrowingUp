@@ -1,0 +1,22 @@
+.createPost {
+    /* background-color: blue;
+    float: right;
+    position: fixed; */
+}
+
+.newPostDiv {
+
+    position: fixed;
+    margin-top: auto;
+    border: solid 10px red;
+    /* background-position-x: right; */
+    /* float: inherit; */
+    margin-top: 60px;
+    margin-left: 1300px;
+}
+
+.btn-primary {
+    /* color: #fff; */
+    /* background-color: #007bff; */
+
+}
