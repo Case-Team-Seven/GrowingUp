@@ -41,18 +41,6 @@ export default class Example extends React.Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
 
-              {/*Pull left */}
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/components/">
-                    Link Option
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">
-                    GitHub
-                  </NavLink>
-                </NavItem>
 
 
                 {/* Pull right */}
