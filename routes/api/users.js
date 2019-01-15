@@ -20,7 +20,6 @@ router.get("/", function(req, res) {
 // api/users/id
 router.get("/:id", function(req, res) {
 
-    console.log("Hi I'm in the user/:id route!")
     const sql = "SELECT * FROM users WHERE id = "+ req.params.id;
 
     connection.query(sql, function(err, results) {
