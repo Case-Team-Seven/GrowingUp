@@ -5,7 +5,7 @@ import LogIn from "./components/LogIn/LogIn";
 import CategoryList from "./components/CategoryList/CategoryList";
 import ForumPost from "./components/Forums/ForumPost";
 import ForumForm from "./components/Forums/ForumForm";
-import NewPostButton from './components/Button/NewPost/NewPostButton';
+import NewPostButton from './components/Button/NewPost/NewPostButton'; 
 import './App.css';
 import { Button } from 'reactstrap';
 
