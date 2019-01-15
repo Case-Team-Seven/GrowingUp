@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Button, CardBody, Card, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 class Example extends Component {
   constructor(props) {
@@ -15,12 +15,11 @@ class Example extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
+        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Post</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-            Log In:
-            
+
             </CardBody>
           </Card>
         </Collapse>

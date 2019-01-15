@@ -49,7 +49,7 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
+                <NavLink href="..
                 GitHub
                 </NavLink>
               </NavItem>
