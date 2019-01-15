@@ -19,7 +19,7 @@ class Post extends Component {
                 {
                     this.state.posts.map((postBody, idx) => {
                         return (
-                            <PostDiv key={idx} postBody={postBody}/> 
+                            <PostDiv key={idx} postBody={postBody} /> 
                         )
                     })
                 }
