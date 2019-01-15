@@ -9,55 +9,28 @@ export default class Example extends React.Component {
         return (
             <Form className="forumForm">
                 <FormGroup>
-                    <Label for="exampleSelectMulti">Select Multiple</Label>
-                    <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </Input>
+                    <Label for="exampleText"><h2>Title:</h2> </Label>
+                    <Input type="textarea" name="text" id="exampleTextTitle" />
                 </FormGroup>
+                <br></br>
                 <FormGroup>
-                    <Label for="exampleText">Text Area</Label>
-                    <Input type="textarea" name="text" id="exampleText" />
+                    <Label for="exampleText"><h2>Your Question:</h2> </Label>
+                    <br></br>
+                    <Input type="textarea" name="text" id="exampleTextQuestion" />
                 </FormGroup>
-                <FormGroup>
+                <br></br>
+                <FormGroup className="insertFileDiv">
                     <Label for="exampleFile">File</Label>
                     <Input type="file" name="file" id="exampleFile" />
+                    <br></br>
                     <FormText color="muted">
                         This is some placeholder block-level help text for the above input.
                         It's a bit lighter and easily wraps to a new line.
                     </FormText>
                 </FormGroup>
-                <FormGroup tag="fieldset">
-                    <legend>Radio Buttons</legend>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radio1" />{' '}
-                            Option one is this and that—be sure to include why it's great
-                        </Label>
-                    </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="radio" name="radio1" />{' '}
-                            Option two can be something else and selecting it will deselect option one
-                        </Label>
-                    </FormGroup>
-                    <FormGroup check disabled>
-                        <Label check>
-                            <Input type="radio" name="radio1" disabled />{' '}
-                            Option three is disabled
-                        </Label>
-                    </FormGroup>
-                </FormGroup>
-                <FormGroup check>
-                    <Label check>
-                        <Input type="checkbox" />{' '}
-                        Check me out
-                    </Label>
-                </FormGroup>
-                <Button>Submit</Button>
+                <br></br>
+                <Button className="formSubmitButton">Submit</Button>
+                
             </Form>
         );
     }

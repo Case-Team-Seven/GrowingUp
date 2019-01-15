@@ -1,8 +1,3 @@
-.createPost {
-    /* background-color: blue;
-    float: right;
-    position: fixed; */
-}
 
 .newPostDiv {
     position: fixed;
@@ -12,11 +7,6 @@
     /* float: inherit; */
     margin-top: 60px;
     margin-left: 1300px;
-}
-
-.btn-primary {
-    /* color: #fff; */
-    /* background-color: #007bff; */
 }
 
 .btn-outline-primary {

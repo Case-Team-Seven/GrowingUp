@@ -5,9 +5,10 @@ import LogIn from "./components/LogIn/LogIn";
 import CategoryList from "./components/CategoryList/CategoryList";
 import ForumPost from "./components/Forums/ForumPost";
 import ForumForm from "./components/Forums/ForumForm";
-import NewPostButton from './components/Button/NewPost/NewPostButton';
+import NewPostButton from './components/Button/NewPost/NewPostButton'; 
 import './App.css';
 import { Button } from 'reactstrap';
+import Post from './components/Forums/Post';
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
         return (
             <div className="mainContainer">
                 
-                
+
                     <NavTop render={<h1>Grownupish</h1>}/>
                     <NewPostButton />
                 
@@ -27,6 +28,8 @@ class App extends Component {
                 </div>
                 <div className="forumsContainer">
                     <ForumPost />
+                    <Post  />
+                    
                 </div>
                 <div className="forumsFormContainer">
                     <ForumForm />
