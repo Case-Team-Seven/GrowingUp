@@ -2,4 +2,34 @@
     margin: 100px;
     border: solid 10px black;
     margin-top: 82px;
+    background-color: #CB2D6F;
+
+}
+
+#exampleTextTitle {
+    width: 45em;
+    margin-left: 3em;
+    color:#14A098;
+    font-size: 20px;
+}
+
+#exampleTextQuestion {
+    width: 85em;
+    height: 13em;
+    margin-left: 3em;
+    color:#14A098;
+    
+}
+
+
+h2 {
+    margin-left: 1.5em;
+}
+
+.insertFileDiv {
+    margin-left: 2.5em;
+}
+
+.formSubmitButton {
+    margin-left:2em;
 }
