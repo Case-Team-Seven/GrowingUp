@@ -14,6 +14,17 @@ export default class Example extends React.Component {
                 </FormGroup>
                 <br></br>
                 <FormGroup>
+                    <Label for="exampleSelect">Select</Label>
+                    <Input type="select" name="select" id="exampleSelect">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </Input>
+                </FormGroup>
+                <br></br>
+                <FormGroup>
                     <Label for="exampleText"><h2>Your Question:</h2> </Label>
                     <br></br>
                     <Input type="textarea" name="text" id="exampleTextQuestion" />
@@ -32,6 +43,8 @@ export default class Example extends React.Component {
                 <Button className="formSubmitButton">Submit</Button>
                 
             </Form>
+
+            
         );
     }
 }
