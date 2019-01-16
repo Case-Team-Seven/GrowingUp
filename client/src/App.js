@@ -18,7 +18,6 @@ const App = () => (
         <div>
             <NavTop />
             <NewPostButton />
-
             <Switch>
                 <Route exact path="/addPost" component={PostForm} />
             </Switch>
