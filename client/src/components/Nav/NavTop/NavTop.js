@@ -89,7 +89,7 @@ import './NavTop.css';
 
 export class NavTop extends React.Component {
   render() {
-    const pages = ['', '','Option 1', 'LogIn/SignUp'];
+    const pages = ['', '','Home', 'LogIn/SignUp'];
     
       
     
