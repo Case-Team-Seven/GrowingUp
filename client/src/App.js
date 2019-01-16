@@ -28,7 +28,6 @@ class App extends Component {
                 </div>
                 <div className="forumsContainer">
                     <ForumPost />
-                    <Post  />
                     
                 </div>
                 <div className="forumsFormContainer">
