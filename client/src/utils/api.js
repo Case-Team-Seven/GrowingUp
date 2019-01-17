@@ -11,6 +11,9 @@ export default {
     },
     // Gets the user with the given id
     getUser: function(id) {
+       // const users = axios.get("/api/users/" + id);
+       // console.log ("Axios API Users: ",  users)
+       //  return  users;
         return axios.get("/api/users/" + id);
     },
 

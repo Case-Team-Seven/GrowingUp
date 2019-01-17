@@ -23,9 +23,13 @@ router.get("/:id", function(req, res) {
     const sql = "SELECT * FROM users WHERE id = "+ req.params.id;
 
     connection.query(sql, function(err, results) {
-        if (err) throw err;
+        if (err){ throw err;}
 
-        res.json(results)
+        let resultSet = results[0];
+
+        console.log(resultSet);
+        //return the first valu
+        res.json(results[0]);
 
     });
 
