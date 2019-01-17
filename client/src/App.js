@@ -13,6 +13,8 @@ import './App.css';
 // import Post from './components/Forums/Post';
 import PostForm from "./pages/PostForm/PostForm"
 import UserProfile from "./pages/Users/UserProfile"
+import TopicPosts from "./pages/Posts/TopicPosts"
+
 
 
 
@@ -26,6 +28,8 @@ const App = () => (
             <Switch>
                 <Route exact path="/addPost" component={PostForm} />
                 <Route exact path="/userProfile/:id" component={UserProfile} />
+                <Route exact path="/topic/:id/posts" component={TopicPosts} />
+
 
             </Switch>
         </div>

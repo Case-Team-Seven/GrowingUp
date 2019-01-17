@@ -24,7 +24,7 @@ export default {
 
     //get all tags
     getAllTags: function() {
-        return axios.get("/api/topics")
+        return axios.get("/api/tags")
     },
 
 
@@ -38,7 +38,9 @@ export default {
     ///////////////
     //get all posts for a topic id
     getAllPostsForTopic: function(topic_id) {
-        return axios.get("/api/posts/topic/" + topic_id);
+        const data = axios.get("/api/posts/topics/" + topic_id);
+        console.log("GetAllPostsForTopic: ", data)
+        return data;
     },
 
 
