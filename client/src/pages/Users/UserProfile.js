@@ -31,6 +31,9 @@ class UserProfile extends Component {
       <Jumbotron>
 
           <h1>{this.state.user.first_name} </h1>
+          <h1>{this.state.user.last_name} </h1>
+          <h1>{this.state.user.email} </h1>
+          <h1>{this.state.user.username} </h1>
 
 
 
@@ -39,7 +42,10 @@ class UserProfile extends Component {
 
 
 
-                </Jumbotron>
+
+
+
+      </Jumbotron>
                     </Col>
                 </Row>
             </Container>
