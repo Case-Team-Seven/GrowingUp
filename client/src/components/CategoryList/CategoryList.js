@@ -9,15 +9,21 @@ export default class Example extends React.Component {
                 <h2>CategoryList </h2>
                 {/* <p>Be sure to <strong>not use the standard <code>.btn</code> classes here</strong>.</p> */}
                 <ListGroup>
-                    <ListGroupItem className="a" active tag="a" href="#" action>Cras justo odio</ListGroupItem>
+                    <ListGroupItem className="Finance" active tag="a" href="" action>Finance</ListGroupItem>
                     <hr></hr>
-                    <ListGroupItem className="a" tag="a" href="#" action>Dapibus ac facilisis in</ListGroupItem>
+                    <ListGroupItem className="Education" tag="a" href="#" action>Education</ListGroupItem>
                     <hr></hr>
-                    <ListGroupItem className="a" tag="a" href="#" action>Morbi leo risus</ListGroupItem>
+                    <ListGroupItem className="Social Media" tag="a" href="#" action>Social Media</ListGroupItem>
                     <hr></hr>
-                    <ListGroupItem className="a" tag="a" href="#" action>Porta ac consectetur ac</ListGroupItem>
+                    <ListGroupItem className="Relationships" tag="a" href="#" action>Relationships</ListGroupItem>
                     <hr></hr>
-                    <ListGroupItem className="a" disabled tag="a" href="#" action>Vestibulum at eros</ListGroupItem>
+                    <ListGroupItem className="Partying" disabled tag="a" href="#" action>Partying</ListGroupItem>
+                    <hr></hr>
+                    <ListGroupItem className="Career" disabled tag="a" href="#" action>Career</ListGroupItem>
+                    <hr></hr>
+                    <ListGroupItem className="Time Management" disabled tag="a" href="#" action>Time Management</ListGroupItem>
+                    <hr></hr>
+                    <ListGroupItem className="Family" disabled tag="a" href="#" action>Family</ListGroupItem>
                     <hr></hr>
                 </ListGroup>
                 <p />
