@@ -39,10 +39,10 @@ CREATE TABLE IF NOT EXISTS  comments (
     id INT AUTO_INCREMENT,
     body VARCHAR(3000) NOT NULL,
     user_id INT,
-    topic_id INT,
+    post_id INT,
     created DATE,
     updated DATE,
-    PRIMARY KEY (id, user_id, topic_id),
+    PRIMARY KEY (id, user_id, post_id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
