@@ -2,7 +2,7 @@ const router = require("express").Router();
 const  connection = require("../../db/connection.js");
 
 
-
+// all topics
 // api/topics
 router.get("/", function(req, res) {
 
@@ -17,6 +17,7 @@ router.get("/", function(req, res) {
 
 });
 
+// one topic
 // api/topics/id
 router.get("/:id", function(req, res) {
 

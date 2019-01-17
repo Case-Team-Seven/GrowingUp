@@ -31,6 +31,24 @@ router.get("/:id", function(req, res) {
 
 });
 
+//get all posts for a topic
+// api/posts/topics/id
+router.get("/topics/:id", function(req, res) {
+
+    const sql = "SELECT * FROM posts WHERE topic_id = "+ req.params.id;
+
+    connection.query(sql, function(err, results) {
+        if (err) throw err;
+
+        res.json(results)
+
+    });
+
+});
+
+
+
+
 // api/users/add
 router.post("/add", function(req, res) {
 
