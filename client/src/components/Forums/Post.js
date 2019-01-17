@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PostDiv from './PostDiv';
-// import './Post.css';
+import './Post.css';
 
 class Post extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class Post extends Component {
 
     render() {
         return (
-            <div>
+            <div className="renderPost">
                 {
                     this.state.posts.map((postBody, idx) => {
                         return (
