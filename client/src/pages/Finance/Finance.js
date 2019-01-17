@@ -16,6 +16,7 @@ class Finance extends Component{
                 <NavTop />
                 <ForumPost />
                 <CategoryList />
+                <NewPostButton />
             </div>
         )
     }

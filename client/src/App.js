@@ -7,6 +7,7 @@ import ForumPost from "./components/Forums/ForumPost";
 import ForumForm from "./components/Forums/ForumForm";
 import NewPostButton from './components/Button/NewPost/NewPostButton'; 
 import './App.css';
+import './components/CategoryList/CategoryList.css';
 import { Button } from 'reactstrap';
 import Post from './components/Forums/Post';
 import PostForm from "./pages/PostForm/PostForm";
@@ -19,10 +20,13 @@ import SocialMedia from "./pages/SocialMedia/SocialMedia";
 import Relationships from "./pages/Relationships/Relationships";
 import Partying from "./pages/Partying/Partying";
 import Career from "./pages/Career/Career";
+import TimeManagement from "./pages/TimeManagement/TimeManagement";
+import Family from "./pages/Family/Family";
 
 const App = () => (
     <Router>
         <div>
+            
             <Switch> 
                 <Route exact path="/" component={Home} />
                 <Route exact path="/Home" component={Home} />
@@ -34,8 +38,8 @@ const App = () => (
                 <Route exact path="/Relationships" component={Relationships} />
                 <Route exact path="/Partying" component={Partying} />
                 <Route exact path="/Career" component={Career} />
-                {/* <Route exact path="/TimeManagement" component={TimeManagement} />
-                <Route exact path="/Family" component={Family} /> */}
+                <Route exact path="/TimeManagement" component={TimeManagement} />
+                <Route exact path="/Family" component={Family} />
             </Switch>
         </div>
     </Router>

@@ -13,6 +13,7 @@ class Relationships extends Component {
                 <NavTop />
                 <ForumPost />
                 <CategoryList />
+                <NewPostButton />
             </div>
         )
     }

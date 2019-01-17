@@ -15,6 +15,7 @@ class Career extends Component{
             <div>
                 <NavTop />
                 <ForumPost />
+                <NewPostButton />
                 <CategoryList />
             </div>
         )

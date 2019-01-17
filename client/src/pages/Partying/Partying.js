@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import { NavTop } from "../../components/Nav/NavTop/NavTop";
 import NewPostButton from '../../components/Button/NewPost/NewPostButton';  
 import { Button } from 'reactstrap';
@@ -12,6 +12,7 @@ class Partying extends Component {
             <div>
                 <NavTop />
                 <ForumPost />
+                <NewPostButton />
                 <CategoryList />
             </div>
         )

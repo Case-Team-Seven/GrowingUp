@@ -12,18 +12,18 @@ import { NavTop } from "../../components/Nav/NavTop/NavTop";
 
 
     class PostForm extends Component {
-        // state = {
-        //     books: [],
-        //     title: "",
-        //     author: "",
-        //     synopsis: ""
-        // };
+        state = {
+            Title: [],
+            Select: [],
+            File: "",
+        };
 
         render() {
             return (  
                 <div>
                     <NavTop />
                     <ForumForm /> 
+                    {/* <NewPostButton /> */}
                 </div> 
             );
           }
@@ -51,15 +51,15 @@ import { NavTop } from "../../components/Nav/NavTop/NavTop";
 //   };
 
 //   handleInputChange = event => {
-//     const { name, value } = event.target;
+//     const { title, value } = event.target;
 //     this.setState({
-//       [name]: value
+//       [title]: value
 //     });
 //   };
 
 //   handleFormSubmit = event => {
-//     event.preventDefault();
-//     if (this.state.title && this.state.author) {
+//     // event.preventDefault();
+//     if (this.state.title && this.state.selection) {
 //       API.saveBook({
 //         title: this.state.title,
 //         author: this.state.author,

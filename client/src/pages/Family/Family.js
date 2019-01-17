@@ -9,7 +9,7 @@ import CategoryList from "../../components/CategoryList/CategoryList";
 
 
 
-class Education extends Component{
+class Family extends Component{
     render() {
         return(
             <div>
@@ -22,6 +22,4 @@ class Education extends Component{
     }
 }
 
-export default Education;
-
-
+export default Family;

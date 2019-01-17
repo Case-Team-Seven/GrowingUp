@@ -9,19 +9,17 @@ import CategoryList from "../../components/CategoryList/CategoryList";
 
 
 
-class Education extends Component{
+class TimeManagement extends Component{
     render() {
         return(
             <div>
                 <NavTop />
                 <ForumPost />
-                <CategoryList />
                 <NewPostButton />
+                <CategoryList />
             </div>
         )
     }
 }
 
-export default Education;
-
-
+export default TimeManagement;
