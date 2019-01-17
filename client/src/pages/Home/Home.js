@@ -15,7 +15,6 @@ class Home extends Component {
                 <CategoryList />
                 <ForumPost />
                 <NewPostButton />
-                <NewPostButton />
             </div>
         );
       }
