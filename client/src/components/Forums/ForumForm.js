@@ -14,14 +14,18 @@ export default class Example extends React.Component {
                 </FormGroup>
                 <br></br>
                 <FormGroup>
-                    <Label for="exampleSelect">Select</Label>
-                    <Input type="select" name="select" id="exampleSelect">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <Label for="exampleSelect"><h2>Select/Assign Category</h2></Label>
+                    <Input class="selectCategoryInput" type="select" name="select" id="exampleSelect">
+                        <option>Finance</option>
+                        <option>Education</option>
+                        <option>Social Media</option>
+                        <option>Relationships</option>
+                        <option>Partying</option>
+                        <option>Career</option>
+                        <option>Time Management</option>
+                        <option>Family</option>
                     </Input>
+                    
                 </FormGroup>
                 <br></br>
                 <FormGroup>
@@ -30,6 +34,7 @@ export default class Example extends React.Component {
                     <Input type="textarea" name="text" id="exampleTextQuestion" />
                 </FormGroup>
                 <br></br>
+                <hr></hr>
                 <FormGroup className="insertFileDiv">
                     <Label for="exampleFile">File</Label>
                     <Input type="file" name="file" id="exampleFile" />

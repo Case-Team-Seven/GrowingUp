@@ -6,6 +6,14 @@
 
 }
 
+/* .form-control {
+    font-size:10px;
+} */
+
+#exampleSelect {
+    font-size:20px;
+    margin-left: 2em;
+}
 #exampleTextTitle {
     width: 45em;
     margin-left: 3em;
@@ -32,4 +40,10 @@ h2 {
 
 .formSubmitButton {
     margin-left:2em;
+}
+
+hr {
+    
+    width: 1260px;
+    
 }
