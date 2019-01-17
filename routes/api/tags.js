@@ -31,7 +31,23 @@ router.get("/:id", function(req, res) {
 
 });
 
+// api/users/add
+router.post("/add", function(req, res) {
 
+    const tag = req.body;
+    console.log("REQ.BODY", req.body);
+
+    const sql = "INSERT INTO `tags` (name) VALUES (?)"
+
+
+    connection.query(sql, [tag.name],  function(err, result){
+        if(err) throw err;
+        console.log("1 record inserted");
+    });
+
+    // res.send(user);
+    res.redirect("/")
+});
 
 
 

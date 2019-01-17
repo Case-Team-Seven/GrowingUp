@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 
         render() {
             return (  
-                    <ForumForm />
+                <ForumForm />
             );
           }
         

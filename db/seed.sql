@@ -14,8 +14,8 @@ values('tag1');
 
 INSERT INTO posts
 (title, body, user_id, topic_id, created, updated)
-values('Test Post Title', 'lorem ipsum blah blah blah......', 1, 1, '2019-01-07', '2019-01-08')
+values('Test Post Title', 'lorem ipsum blah blah blah......', 1, 1, '2019-01-07', '2019-01-08');
 
 INSERT INTO comments
-(body, user_id, topic_id, created, updated)
-values('comments comments commments', 1, 1, '2019-01-07', '2019-01-08')
+(body, user_id, post_id, created, updated)
+values('comments comments commments', 1, 1, '2019-01-07', '2019-01-08');
