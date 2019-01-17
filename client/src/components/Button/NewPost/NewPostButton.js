@@ -2,7 +2,7 @@ import React from 'react';
 // import  Component  from 'react';
 import { Button, Collapse } from 'reactstrap';
 import './NewPostButton.css';
-import ForumPost from '../../Forums/ForumPost';
+// import ForumPost from '../../Forums/ForumPost';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 

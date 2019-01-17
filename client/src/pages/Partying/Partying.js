@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import { NavTop } from "../../components/Nav/NavTop/NavTop";
 import NewPostButton from '../../components/Button/NewPost/NewPostButton';  
 import { Button } from 'reactstrap';
@@ -6,18 +6,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ForumPost from "../../components/Forums/ForumPost";
 import CategoryList from "../../components/CategoryList/CategoryList";
 
-
-class Home extends Component {
+class Partying extends Component {
     render() {
-        return (  
+        return(
             <div>
                 <NavTop />
-                
                 <ForumPost />
-                <CategoryList />
                 <NewPostButton />
+                <CategoryList />
             </div>
-        );
-      }
+        )
+    }
 }
-export default Home;
+
+export default Partying;

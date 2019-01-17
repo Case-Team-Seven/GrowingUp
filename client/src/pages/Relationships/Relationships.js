@@ -6,18 +6,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ForumPost from "../../components/Forums/ForumPost";
 import CategoryList from "../../components/CategoryList/CategoryList";
 
-
-class Home extends Component {
+class Relationships extends Component {
     render() {
-        return (  
+        return(
             <div>
                 <NavTop />
-                
                 <ForumPost />
                 <CategoryList />
                 <NewPostButton />
             </div>
-        );
-      }
+        )
+    }
 }
-export default Home;
+
+export default Relationships;

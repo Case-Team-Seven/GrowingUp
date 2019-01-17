@@ -5,25 +5,25 @@ import { Button, Form, FormGroup, Label, Input, FormText } from "../../component
 // import '../../components/Forums/forumPost.css';
 // import { Button, Collapse } from '../../components/Button/NewPost/NewPostButton';
 // import '../../components/Forums/NewPostButton.css';
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { NavTop } from "../../components/Nav/NavTop/NavTop";
 
 
     class PostForm extends Component {
-        // state = {
-        //     books: [],
-        //     title: "",
-        //     author: "",
-        //     synopsis: ""
-        // };
+        state = {
+            Title: [],
+            Select: [],
+            File: "",
+        };
 
         render() {
             return (  
                 <div>
                     <NavTop />
                     <ForumForm /> 
+                    {/* <NewPostButton /> */}
                 </div> 
             );
           }
@@ -51,15 +51,15 @@ import { NavTop } from "../../components/Nav/NavTop/NavTop";
 //   };
 
 //   handleInputChange = event => {
-//     const { name, value } = event.target;
+//     const { title, value } = event.target;
 //     this.setState({
-//       [name]: value
+//       [title]: value
 //     });
 //   };
 
 //   handleFormSubmit = event => {
-//     event.preventDefault();
-//     if (this.state.title && this.state.author) {
+//     // event.preventDefault();
+//     if (this.state.title && this.state.selection) {
 //       API.saveBook({
 //         title: this.state.title,
 //         author: this.state.author,
