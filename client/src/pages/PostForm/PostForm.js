@@ -8,6 +8,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from "../../component
 
 // import API from "../../utils/API";
 import { Link } from "react-router-dom";
+import { NavTop } from "../../components/Nav/NavTop/NavTop";
 
 
     class PostForm extends Component {
@@ -20,7 +21,10 @@ import { Link } from "react-router-dom";
 
         render() {
             return (  
-                <ForumForm />
+                <div>
+                    <NavTop />
+                    <ForumForm /> 
+                </div> 
             );
           }
         
