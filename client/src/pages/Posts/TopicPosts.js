@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
 import API from "../../utils/api";
-import {Container, Row, Col, Jumbotron} from 'reactstrap'
+import {Container, Row, Col, ListGroup, ListGroupItem} from 'reactstrap'
+import { Link } from "react-router-dom";
 
 
-class TopicPosts extends Component {
+class TopicPosts extends Component  {
     state = {
-        posts: {}
+        posts: []
     };
 
     componentDidMount() {
@@ -16,25 +17,37 @@ class TopicPosts extends Component {
             .catch(err => console.log(err));
     }
 
+    getTopicInfo() {
+
+    }
+
 
 
 
     render() {
 
         console.log("Render Posts: ", this.state.posts)
-
         return (
-
             <Container>
                 <Row>
                     <Col>
+                        <h1>POSTS</h1>
+                        <h1>POSTS</h1>
+                        <h1>POSTS</h1>
+                        <h1>POSTS</h1>
 
+                        <ListGroup>
+                            {
+                            this.state.posts.map(post =>
 
+                                <ListGroupItem key={post.id} value={post.id}>   <Link to={'/posts/'+ post.id} >{post.title} </Link></ListGroupItem>
+
+                            )}
+
+                        </ListGroup>
                     </Col>
                 </Row>
             </Container>
-
-
 
         );
     }

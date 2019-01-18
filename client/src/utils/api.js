@@ -33,6 +33,12 @@ export default {
         return axios.get("/api/topics")
     },
 
+    //get one topics
+    getTopic: function(topic_id) {
+        return axios.get("/api/topics/" +topic_id)
+    },
+
+
     ///////////////
     //POSTS
     ///////////////
