@@ -11,6 +11,9 @@ export default {
     },
     // Gets the user with the given id
     getUser: function(id) {
+       // const users = axios.get("/api/users/" + id);
+       // console.log ("Axios API Users: ",  users)
+       //  return  users;
         return axios.get("/api/users/" + id);
     },
 
@@ -21,7 +24,7 @@ export default {
 
     //get all tags
     getAllTags: function() {
-        return axios.get("/api/topics")
+        return axios.get("/api/tags")
     },
 
 
@@ -35,7 +38,9 @@ export default {
     ///////////////
     //get all posts for a topic id
     getAllPostsForTopic: function(topic_id) {
-        return axios.get("/api/posts/topic/" + topic_id);
+        const data = axios.get("/api/posts/topics/" + topic_id);
+        console.log("GetAllPostsForTopic: ", data)
+        return data;
     },
 
 
