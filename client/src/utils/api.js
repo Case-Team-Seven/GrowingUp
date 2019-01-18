@@ -43,6 +43,12 @@ export default {
         return data;
     },
 
+    // Saves a post to the database
+    createPost: function(postData) {
+        return axios.post("/api/posts/add", postData);
+    },
+
+
 
     ///////////////
     //COMMENTS
