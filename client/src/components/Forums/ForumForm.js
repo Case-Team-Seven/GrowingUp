@@ -5,11 +5,26 @@ import './ForumForm.css';
 export default class Example extends React.Component {
 
 
+    constructor() {
+        super();
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+      handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        
+        fetch('/api/posts/add', {
+          method: 'POST',
+          body: data,
+        });
+      }
+
     render() {
         return (
-            <Form className="forumForm">
+            <Form className="forumForm" onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <Label for="exampleText"><h2>Title:</h2> </Label>
+                    <Label htmlFor="title" for="exampleText"><h2>Title:</h2> </Label>
                     <Input type="textarea" name="text" id="exampleTextTitle" />
                 </FormGroup>
                 <br></br>
@@ -45,8 +60,7 @@ export default class Example extends React.Component {
                     </FormText>
                 </FormGroup>
                 <br></br>
-                <Button className="formSubmitButton">Submit</Button>
-                
+                <Button className="formSubmitButton">Submit data</Button> 
             </Form>
 
             
