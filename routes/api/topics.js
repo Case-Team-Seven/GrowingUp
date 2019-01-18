@@ -26,7 +26,7 @@ router.get("/:id", function(req, res) {
     connection.query(sql, function(err, results) {
         if (err) throw err;
 
-        res.json(results)
+        res.json(results[0]);
 
     });
 

@@ -1,8 +1,9 @@
 {
-  "name": "GrowingUp",
+  "name": "growing-up",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": "http://localhost:3001",
   "engines": {
     "npm": "6.4.1",
     "node": "10.14.1"
