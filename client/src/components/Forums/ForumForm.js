@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './ForumForm.css';
 // import axios here
 import axios from 'axios';
+import { fileURLToPath } from 'url';
 
 class ForumForm extends Component {
     state = {
@@ -13,19 +14,36 @@ class ForumForm extends Component {
 
 
       handleCategorySelect = (event) => {
-          console.log(event.target.value)
-          this.setState({topicId: event.target.value})
-          console.log(this.state)
+        // console.log(event.target.value)
+        //   this.setState({topicId: event.target.value})
+        //   console.log(this.state)
+
+        this.setState({topicId: event.target.value}, () => {
+            console.log(this.state);
+        });
+        
       }
 
       handleQuestion = event => {
-          this.setState({question: event.target.value})
-          console.log(this.state)
+          
+          this.setState({question: event.target.value}, () => {
+          console.log(this.state);
+        });
+        
       }
+    
+
       handleTitle = event => {
-        this.setState({title: event.target.value})
-        console.log(this.state)
-      }
+        this.setState({title: event.target.value}, () => {
+        console.log(this.state);
+      });
+
+    }
+
+    //   handleTitle = event => {
+    //     this.setState({file: event.target.value})
+    //     console.log(this.state)
+    //   }
 
       handleSubmit = (event) => {
         event.preventDefault();
@@ -34,13 +52,17 @@ class ForumForm extends Component {
         const data = {
             title: this.state.title,
             body: this.state.question,
-            topic_id: this.state.topicId
+            topic_id: this.state.topicId,
+            file: this.state.file
         }
 
         //this isnt capturing your data. you need to grab it from your form inputs
         console.log(data)
-        axios.post('/api/posts/add', data).then((res)=>{console.log(res)})
+        axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
+        .catch(error => console.log(error))
       }
+
+      
 
     render() {
         return (
