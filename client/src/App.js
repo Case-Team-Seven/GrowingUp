@@ -1,17 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-// import logo from './logo.svg';
-import {NavTop} from "./components/Nav/NavTop/NavTop";
-// import LogIn from "./components/LogIn/LogIn";
-// import CategoryList from "./components/CategoryList/CategoryList";
-// import ForumPost from "./components/Forums/ForumPost";
-// import ForumForm from "./components/Forums/ForumForm";
-import NewPostButton from './components/Button/NewPost/NewPostButton'; 
+
 import './App.css';
-// import { Button } from 'reactstrap';
-// import Post from './components/Forums/Post';
-import PostForm from "./pages/PostForm/PostForm"
+
 import UserProfile from "./pages/Users/UserProfile"
 import TopicPosts from "./pages/Posts/TopicPosts"
 
@@ -23,7 +15,6 @@ import Post from './components/Forums/Post';
 import PostForm from "./pages/PostForm/PostForm";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Finance from "./pages/Finance/Finance";
 import Education from "./pages/Education/Education";
 import SocialMedia from "./pages/SocialMedia/SocialMedia";
