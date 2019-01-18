@@ -38,7 +38,7 @@ export default {
     ///////////////
     //get all posts for a topic id
     getAllPostsForTopic: function(topic_id) {
-        const data = axios.get("/api/posts/topics/" + topic_id);
+        const data = axios.get("/api/posts/topics/" + topic_id)();
         console.log("GetAllPostsForTopic: ", data)
         return data;
     },

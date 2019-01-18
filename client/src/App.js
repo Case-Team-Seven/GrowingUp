@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import './App.css';
 
-import UserProfile from "./pages/Users/UserProfile"
-import TopicPosts from "./pages/Posts/TopicPosts"
+import UserProfile from "./pages/Users/UserProfile";
+import TopicPosts from "./pages/Posts/TopicPosts";
 
 
 
