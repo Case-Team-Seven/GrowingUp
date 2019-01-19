@@ -30,10 +30,7 @@ class TopicPosts extends Component  {
             <Container>
                 <Row>
                     <Col>
-                        <h1>POSTS</h1>
-                        <h1>POSTS</h1>
-                        <h1>POSTS</h1>
-                        <h1>POSTS</h1>
+                        
 
                         <ListGroup>
                             {
