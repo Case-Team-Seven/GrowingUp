@@ -92,8 +92,8 @@ router.post("/add", function(req, res) {
         console.log("1 record inserted");
     });
 
-    // res.send(post);
-    res.redirect("/")
+    res.send(post);
+    // res.redirect("/")
 });
 
 
