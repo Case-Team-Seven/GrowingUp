@@ -35,7 +35,7 @@ router.get("/:id", function(req, res) {
 //api/comments/posts/id
 router.get("/posts/:id", function(req, res) {
 
-    const sql = "SELECT * FROM comments WHERE post_id = " + req.params.id + " ORDER BY created DESC";
+    const sql = "SELECT * FROM comments WHERE post_id = " + req.params.id;
 
 
     connection.query(sql, function(err, results) {

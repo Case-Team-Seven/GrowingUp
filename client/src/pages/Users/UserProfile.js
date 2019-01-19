@@ -34,16 +34,6 @@ class UserProfile extends Component {
           <h1>{this.state.user.email} </h1>
           <h1>{this.state.user.username} </h1>
 
-
-
-
-
-
-
-
-
-
-
       </Jumbotron>
                     </Col>
                 </Row>

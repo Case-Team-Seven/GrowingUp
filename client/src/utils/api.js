@@ -28,14 +28,15 @@ export default {
     },
 
 
+    ///////////////
+    //TOPiC
+    ///////////////
+
     //get all topics
     getAllTopics: function() {
         return axios.get("/api/topics")
     },
 
-    ///////////////
-    //POSTS
-    ///////////////
 
     //get one topics
     getTopic: function(topic_id) {
@@ -43,7 +44,15 @@ export default {
     },
 
 
-    //get all posts for a topic id
+    ///////////////
+    //POSTS
+    ///////////////
+
+    //get one Post
+    getOnePost: function(post_id) {
+
+        return axios.get("/api/posts/" + post_id)
+    },
     getAllPostsForTopic: function(topic_id) {
 
         return axios.get("/api/posts/topics/" + topic_id)
@@ -61,7 +70,7 @@ export default {
     //COMMENTS
     ///////////////
     getAllCommentsForAPost: function(post_id) {
-        return axios.get("/api/comments/post/" + post_id);
+        return axios.get("/api/comments/posts/" + post_id);
     }
 
 

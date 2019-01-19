@@ -8,6 +8,8 @@ import './components/CategoryList/CategoryList.css';
 import UserProfile from "./pages/Users/UserProfile";
 import TopicPosts from "./pages/Posts/TopicPosts";
 import PostForm from "./pages/PostForm/PostForm";
+import PostPage from "./pages/Posts/PostPage";
+
 
 
 const App = () => (
@@ -18,6 +20,8 @@ const App = () => (
                 <Route exact path="/addPost" component={PostForm} />
                 <Route exact path="/userProfile/:id" component={UserProfile} />
                 <Route exact path="/topic/:id/posts" component={TopicPosts} />
+                <Route exact path="/posts/:id/" component={PostPage} />
+
 
 
             </Switch>
