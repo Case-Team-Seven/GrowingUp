@@ -33,20 +33,20 @@ export default {
         return axios.get("/api/topics")
     },
 
+    ///////////////
+    //POSTS
+    ///////////////
+
     //get one topics
     getTopic: function(topic_id) {
         return axios.get("/api/topics/" +topic_id)
     },
 
 
-    ///////////////
-    //POSTS
-    ///////////////
     //get all posts for a topic id
     getAllPostsForTopic: function(topic_id) {
-        const data = axios.get("/api/posts/topics/" + topic_id)();
-        console.log("GetAllPostsForTopic: ", data)
-        return data;
+
+        return axios.get("/api/posts/topics/" + topic_id)
     },
 
     // Saves a post to the database

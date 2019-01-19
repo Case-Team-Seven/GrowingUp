@@ -51,10 +51,4 @@ const App = () => (
 );
 
 
-
-        // return (
-        //     <div className="mainContainer">
-                
-
-
 export default App;

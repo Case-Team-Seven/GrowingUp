@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
 import API from "../../utils/api";
-import {Container, Row, Col, ListGroup, ListGroupItem} from 'reactstrap'
 import { Link } from "react-router-dom";
+import {Container, Row, Col, ListGroup, ListGroupItem} from 'reactstrap'
 
 
 class TopicPosts extends Component  {
@@ -11,7 +10,7 @@ class TopicPosts extends Component  {
     };
 
     componentDidMount() {
-        console.log("Component did mount (this): ", this)
+        // console.log("Component did mount (this): ", this)
         API.getAllPostsForTopic(this.props.match.params.id)
             .then(res =>  this.setState({ posts: res.data}))
             .catch(err => console.log(err));
