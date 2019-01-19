@@ -4,14 +4,23 @@ import './ForumForm.css';
 // import axios here
 import axios from 'axios';
 import { fileURLToPath } from 'url';
+import ForumPost from './ForumPost';
 
 class ForumForm extends Component {
-    state = {
-      title: "",
-      topicId: "",
-      question: ""
-    };
+    
+    constructor(props) {
+        super(props);
+        this.handleCategorySelect =             this.handleCategorySelect.bind(this);
+        this.handleQuestion =             this.handleQuestion.bind(this);
+        this.handleTitle = this.handleTitle.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
+        this.state = {
+                title: "",
+                topicId: "",
+                question: ""
+        };
+    }
 
       handleCategorySelect = (event) => {
         // console.log(event.target.value)
@@ -52,13 +61,20 @@ class ForumForm extends Component {
         const data = {
             title: this.state.title,
             body: this.state.question,
-            topic_id: this.state.topicId,
-            file: this.state.file
+            topic_id: this.state.topicId
+            // file: this.state.file
         }
 
         //this isnt capturing your data. you need to grab it from your form inputs
         console.log(data)
-        axios.post('/api/posts/add', data).then((res)=>{console.log(res)})
+        axios.post('http://localhost:3000/api/posts/add', data)
+        .then(res => console.log(res.data));
+
+            this.setState({
+                title: '',
+                topic_id: '',
+                question: ''
+            });
       }
 
     render() {
@@ -71,7 +87,7 @@ class ForumForm extends Component {
                 <br></br>
                 <FormGroup>
                     <Label for="exampleSelect"><h2>Select/Assign Category</h2></Label>
-                    <Input onChange={this.handleCategorySelect} class="selectCategoryInput" type="select" name="select" id="exampleSelect">
+                    <Input onChange={this.handleCategorySelect} value={this.state.topicId} class="selectCategoryInput" type="select" name="select" id="exampleSelect">
                         <option>Finance</option>
                         <option>Education</option>
                         <option>Social Media</option>

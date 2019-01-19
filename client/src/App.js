@@ -43,8 +43,6 @@ const App = () => (
                 <Route exact path="/Family" component={Family} />
                 <Route exact path="/userProfile/:id" component={UserProfile} />
                 <Route exact path="/topic/:id/posts" component={TopicPosts} />
-
-
             </Switch>
         </div>
     </Router>
