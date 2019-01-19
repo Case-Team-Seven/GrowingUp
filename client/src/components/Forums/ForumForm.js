@@ -8,8 +8,9 @@ import API from "../../utils/api";
 class ForumForm extends Component {
     state = {
       title: "",
-      // topicId: "",
-      question: ""
+      topicId: "",
+      question: "",
+      topics: []
     };
 
 
@@ -17,8 +18,8 @@ class ForumForm extends Component {
         // console.log(event.target.value)
         //   this.setState({topicId: event.target.value})
         //   console.log(this.state)
-
-        this.setState({topicId: event.target.value}, () => {
+        // event.target.value=parseInt(event.target.value,10)
+        this.setState({topicId: parseInt(event.target.value)}, () => {
             console.log(this.state);
         });
         
@@ -45,15 +46,22 @@ class ForumForm extends Component {
     //     console.log(this.state)
     //   }
 
+        componentDidMount() {
+            // console.log("Component did mount (this): ", this)
+            API.getAllTopics()
+                .then(res =>  this.setState({ topics: res.data}))
+                .catch(err => console.log(err));
+        }
+
       handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state)
-
+        
         const data = {
             title: this.state.title,
             body: this.state.question,
             // topic_id: this.state.topicId,
-            topic_id: 1,
+            topic_id: this.state.topicId,
             user_id: 1,
 
             // file: this.state.file
@@ -70,6 +78,7 @@ class ForumForm extends Component {
       
 
     render() {
+        console.log("Render: " , this.state.topics)
         return (
             <Form className="forumForm" onSubmit={this.handleSubmit}>
                 <FormGroup>
@@ -80,14 +89,14 @@ class ForumForm extends Component {
                 <FormGroup>
                     <Label for="exampleSelect"><h2>Select/Assign Category</h2></Label>
                     <Input onChange={this.handleCategorySelect} className="selectCategoryInput" type="select" name="select" id="exampleSelect">
-                        <option>Finance</option>
-                        <option>Education</option>
-                        <option>Social Media</option>
-                        <option>Relationships</option>
-                        <option>Partying</option>
-                        <option>Career</option>
-                        <option>Time Management</option>
-                        <option>Family</option>
+                    <option>Select a Topic</option>
+
+                    {
+                        this.state.topics.map(topic =>
+                        <option key={topic.id} value={topic.id}>   {topic.title} </option>
+                        )}
+
+                       
                     </Input>
                     
 
