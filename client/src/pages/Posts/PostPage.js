@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/api";
-import {Container, Row, Col, Jumbotron, ListGroupItem, ListGroup} from 'reactstrap'
+import {Container, Row, Col, Jumbotron, ListGroupItem, ListGroup} from 'reactstrap';
+
 
 
 class PostPage extends Component  {
