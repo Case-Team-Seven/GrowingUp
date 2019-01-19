@@ -13,9 +13,9 @@ import { NavTop } from "../../components/Nav/NavTop/NavTop";
 
     class PostForm extends Component {
         state = {
-            Title: [],
-            Select: [],
-            File: "",
+            Title: "",
+            Select: "",
+            // File: "",
         };
 
         render() {

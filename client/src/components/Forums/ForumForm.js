@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './ForumForm.css';
-// import axios here
 import axios from 'axios';
+import API from "../../utils/api";
+
 import { fileURLToPath } from 'url';
 
 class ForumForm extends Component {
     state = {
       title: "",
-      topicId: "",
+      // topicId: "",
       question: ""
     };
 
@@ -52,13 +53,18 @@ class ForumForm extends Component {
         const data = {
             title: this.state.title,
             body: this.state.question,
-            topic_id: this.state.topicId,
-            file: this.state.file
+            // topic_id: this.state.topicId,
+            topic_id: 1,
+            user_id: 1,
+
+            // file: this.state.file
         }
 
         //this isnt capturing your data. you need to grab it from your form inputs
         console.log(data)
-        axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
+
+        // axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
+        API.createPost(data).then((res)=>{console.log(res.data.errors)})
         .catch(error => console.log(error))
       }
 

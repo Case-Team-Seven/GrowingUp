@@ -51,6 +51,7 @@ export default {
 
     // Saves a post to the database
     createPost: function(postData) {
+        console.log("Post Data: ", postData);
         return axios.post("/api/posts/add", postData);
     },
 
