@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import { Collapse, Button, CardBody, Card, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { FormControl, ControlLabel } from "react-bootstrap";
 import "./LogIn.css";
 
-export default class Login extends Component {
+export default class LogIn extends Component {
   constructor(props) {
     super(props);
 
@@ -19,12 +20,21 @@ export default class Login extends Component {
 
   handleChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
   handleSubmit = event => {
     event.preventDefault();
+
+    const user = {
+      name: this.state.name
+    }
+    axios.post('/loginUser', { user })
+    .then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
   }
 
   render() {
@@ -36,6 +46,7 @@ export default class Login extends Component {
             <FormControl
               autoFocus
               type="email"
+              name="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
@@ -43,6 +54,7 @@ export default class Login extends Component {
           <FormGroup controlId="password" bsSize="large">
             <ControlLabel>Password</ControlLabel>
             <FormControl
+              name="password"
               value={this.state.password}
               onChange={this.handleChange}
               type="password"

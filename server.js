@@ -38,7 +38,7 @@ app.get('/api/getList', (req,res) => {
     console.log('Sent list of items');
 });
 
-app.use(routes);
+// app.use(routes);
 app.use(loginRoute)
 app.use(deleteUserRoute)
 app.use(findUserRoute)

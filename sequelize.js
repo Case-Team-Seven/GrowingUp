@@ -4,6 +4,9 @@ const UserModel = require('./models/user.js');
 const sequelize = new Sequelize('grownup', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql',
+  define: {
+    timestamps: false
+}
 });
 
 const User = UserModel(sequelize, Sequelize);
