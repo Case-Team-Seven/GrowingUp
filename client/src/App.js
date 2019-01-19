@@ -12,8 +12,7 @@ import { Button } from 'reactstrap';
 // import Post from './components/Forums/Post';
 // import PostForm from "./pages/PostForm/PostForm";
 //import Home from "./pages/Home/Home";
-import LogIn from "./components/LogIn/LogIn";
-import Register from "./components/LogIn/Register";
+
 // import Finance from "./pages/Finance/Finance";
 // import Education from "./pages/Education/Education";
 // import SocialMedia from "./pages/SocialMedia/SocialMedia";
@@ -30,8 +29,7 @@ const App = () => (
             <Switch>
                 {/* <Route exact path="/" component={Home} />
                 <Route exact path="/Home" component={Home} /> */}
-                <Route exact path="/LogIn" component={LogIn} />
-                <Route exact path="/Register" component={Register} />
+ 
                 {/* <Route exact path="/addPost" component={PostForm} />
                 <Route exact path="/LogIn/SignUp" component={Login} />
                 <Route exact path="/Finance" component={Finance} />
