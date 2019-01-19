@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './ForumForm.css';
-import axios from 'axios';
 import API from "../../utils/api";
 
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 
 class ForumForm extends Component {
     state = {
@@ -80,7 +79,7 @@ class ForumForm extends Component {
                 <br></br>
                 <FormGroup>
                     <Label for="exampleSelect"><h2>Select/Assign Category</h2></Label>
-                    <Input onChange={this.handleCategorySelect} class="selectCategoryInput" type="select" name="select" id="exampleSelect">
+                    <Input onChange={this.handleCategorySelect} className="selectCategoryInput" type="select" name="select" id="exampleSelect">
                         <option>Finance</option>
                         <option>Education</option>
                         <option>Social Media</option>

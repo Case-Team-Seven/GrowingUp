@@ -1,27 +1,22 @@
 import React, { Component } from "react";
-import NewPostButton from "../../components/Button/NewPost/NewPostButton";
 import ForumForm from "../../components/Forums/ForumForm";
-import { Button, Form, FormGroup, Label, Input, FormText } from "../../components/Forums/ForumForm";
+// import {  FormGroup, Label, FormText } from "../../components/Forums/ForumForm";
 // import '../../components/Forums/forumPost.css';
-// import { Button, Collapse } from '../../components/Button/NewPost/NewPostButton';
-// import '../../components/Forums/NewPostButton.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { NavTop } from "../../components/Nav/NavTop/NavTop";
+
+// import { NavTop } from "../../components/Nav/NavTop/NavTop";
 
 
     class PostForm extends Component {
         state = {
             Title: "",
             Select: "",
-            // File: "",
+            File: "",
         };
 
         render() {
             return (  
                 <div>
-                    <NavTop />
+                    {/*<NavTop />*/}
                     <ForumForm /> 
                     {/* <NewPostButton /> */}
                 </div> 
