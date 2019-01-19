@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/api";
-import {Container, Row, Col, Jumbotron, ListGroupItem, ListGroup} from 'reactstrap';
-
+import {Container, Row, Col, Jumbotron, ListGroupItem, ListGroup, Card, Button, CardTitle, CardText} from 'reactstrap';
+import './../../components/Forums/ForumPost.css';
 
 
 class PostPage extends Component  {
@@ -34,14 +34,16 @@ class PostPage extends Component  {
         return (
 
             <Container>
-                <Row>
-                    <Col>
+                <Row id="testRow">
+                    <Col sm="6">
                         <Jumbotron>
-
-                            <h1>{this.state.post.title} </h1>
-                            <h1>{this.state.post.body} </h1>
-                            <h1>{this.state.post.topic_id} </h1>
-                            <h1>{this.state.post.user_id} </h1>
+                            <Card body>
+                                <CardTitle>{this.state.post.title}</CardTitle>
+                                <CardText>{this.state.post.body}</CardText>
+                                {/* <div>{this.state.post.user_id}</div> */}
+                                {/* <div>{this.state.post.topic_id}</div> */}
+                                {/* <Button>Go somewhere</Button> */}
+                            </Card>
 
                             <h1> COMMENT BELOW </h1>
 
