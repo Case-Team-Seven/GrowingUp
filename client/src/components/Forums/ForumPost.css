@@ -1,0 +1,31 @@
+.forumCard {
+    padding: 25px;
+    margin: 368px;
+    margin-top: 1em;
+}
+
+Col {
+    display:flex;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    /* min-width: 45px; */
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    margin-left: 26em;
+    margin-right: 22em;
+    /* flex: 11 1 auto; */
+    padding: 2.25rem;
+    position: relative;
+    width: 42em;
+    -webkit-margin-before: 6.1em;
+}
