@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/api";
 import {Container, Row, Col, Jumbotron, ListGroupItem, ListGroup} from 'reactstrap'
-
+import CommentButton from "./../../components/CommentButton/CommentButton"
 
 class PostPage extends Component  {
     state = {
