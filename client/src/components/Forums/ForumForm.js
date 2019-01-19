@@ -58,11 +58,8 @@ class ForumForm extends Component {
 
         //this isnt capturing your data. you need to grab it from your form inputs
         console.log(data)
-        axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
-        .catch(error => console.log(error))
+        axios.post('/api/posts/add', data).then((res)=>{console.log(res)})
       }
-
-      
 
     render() {
         return (
@@ -105,7 +102,7 @@ class ForumForm extends Component {
                     </FormText>
                 </FormGroup>
                 <br></br>
-                <Button type="submit" className="formSubmitButton">Submit data</Button> 
+                <Button type="submit" className="formSubmitButton" onClick={this.handleSubmit}>Submit data</Button> 
             </Form>
 
             
