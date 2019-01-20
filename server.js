@@ -4,6 +4,8 @@ const Cors = require('cors');
 const logger = require('morgan');
 const routes = require("./routes");
 const OktaJwtVerifier = require('@okta/jwt-verifier');
+const index = require('./routes/api/index');
+const users = require('./routes/api/users');
 
 const oktaJwtVerifier = new OktaJwtVerifier({
     issuer: 'https://dev-336569.oktapreview.com/oauth2/default',
@@ -42,6 +44,9 @@ app.use(Cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
+app.use('/api', index);
+app.use('/api/users', users);
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
