@@ -44,20 +44,20 @@ class UserProfile extends Component {
                             </Row>
                         </Container> */}
 
-                        <div class="wrapper">
-                            <div class="cols">
-                                <div class="col" ontouchstart="this.classList.toggle('hover');">
-                                    <div class="container">
-                                        <div class="front" >
-						                    <div class="inner">
-                                                <h1 id="usernameText">{this.state.user.username} </h1>
+                        <div className="wrapperFlip">
+                            <div className="colsFlip">
+                                <div className="colFlip" ontouchstart="this.classList.toggle('hover');">
+                                    <div className="containerFlip">
+                                        <div className="front" >
+						                    <div className="inner">
+                                                <h1 id="userText">{this.state.user.username} </h1>
 						                    </div>
 					                    </div>
-                                        <div class="back">
-			                                <div class="inner">
-                                                <h1>{this.state.user.first_name} </h1>
-                                                <h1>{this.state.user.last_name} </h1>
-                                                <h1>{this.state.user.email} </h1>
+                                        <div className="back">
+			                                <div className="inner">
+                                                <h1 id="userText">{this.state.user.first_name} </h1>
+                                                <h1 id="userText">{this.state.user.last_name} </h1>
+                                                <h1 id="userText">{this.state.user.email} </h1>
 						                    </div>
 					                    </div>
                                     </div>

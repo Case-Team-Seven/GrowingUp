@@ -1,11 +1,11 @@
-*{
+  /* *{
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  
-  h1{
+   */
+   #userText{
     font-size: 2.5rem;
     font-family: 'Montserrat';
     font-weight: normal;
@@ -14,13 +14,13 @@
     margin: 2rem 0;
   }
   
-  .wrapper{
+  .wrapperFlip{
     width: 90%;
     margin: 0 auto;
     max-width: 80rem;
   }
   
-  .cols{
+  .colsFlip{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,7 +31,7 @@
             justify-content: center;
   }
   
-  .col{
+  .colFlip{
     /* width: calc(25% - 2rem); */
     /* width: calc(8% - -59rem);
     margin: 1rem;
@@ -41,7 +41,7 @@
     cursor: pointer;
   }
   
-  .container{
+  .containerFlip{
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
       -webkit-perspective: 1000px;
@@ -94,8 +94,8 @@
       border-radius: 10px;
   }
 
-  .container:hover .front,
-  .container:hover .back{
+  .containerFlip:hover .front,
+  .containerFlip:hover .back{
       -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -120,28 +120,28 @@
       z-index: 2;
   }
   
-  .container .back{
+  .containerFlip .back{
       -webkit-transform: rotateY(180deg);
               transform: rotateY(180deg);
       -webkit-transform-style: preserve-3d;
               transform-style: preserve-3d;
   }
   
-  .container .front{
+  .containerFlip .front{
       -webkit-transform: rotateY(0deg);
               transform: rotateY(0deg);
       -webkit-transform-style: preserve-3d;
               transform-style: preserve-3d;
   }
   
-  .container:hover .back{
+  .containerFlip:hover .back{
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
   }
   
-  .container:hover .front{
+  .containerFlip:hover .front{
     -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
     -webkit-transform-style: preserve-3d;
@@ -187,19 +187,19 @@
   
   
   @media screen and (max-width: 64rem){
-    .col{
+    .colFlip{
       width: calc(33.333333% - 2rem);
     }
   }
   
   @media screen and (max-width: 48rem){
-    .col{
+    .colFlip{
       width: calc(50% - 2rem);
     }
   }
   
   @media screen and (max-width: 32rem){
-    .col{
+    .colFlip{
       width: 100%;
       margin: 0 0 2rem 0;
     }
