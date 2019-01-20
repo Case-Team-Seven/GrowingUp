@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     username VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
+    score INT DEFAULT 0,
     PRIMARY KEY (id),
     created TIMESTAMP DEFAULT CURRENT_TIMESTAMP  NOT NULL,
     updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
@@ -35,6 +36,7 @@ CREATE TABLE IF NOT EXISTS  posts (
     topic_id INT,
     created TIMESTAMP DEFAULT CURRENT_TIMESTAMP  NOT NULL,
     updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+    score INT DEFAULT 0,
     PRIMARY KEY (id, user_id, topic_id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -57,3 +59,14 @@ CREATE TABLE IF NOT EXISTS tags (
     PRIMARY KEY (id)
 
 );
+
+CREATE TABLE IF NOT EXISTS votes (
+user_id INT,
+post_id INT,
+vote INT,
+PRIMARY KEY (user_id, post_id),
+FOREIGN KEY (post_id) references posts (id),
+FOREIGN KEY (user_id) references users (id)
+
+);
+
