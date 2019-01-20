@@ -60,7 +60,7 @@ router.post("/add", function(req, res) {
     //res.send('hey whatsup hello')
 
 
-    const sql = "INSERT INTO `posts` (title, body, user_id, topic_id) VALUES (?, ?, ?, ?, ?, ?)"
+    const sql = "INSERT INTO `posts` (title, body, user_id, topic_id) VALUES (?, ?, ?, ?)"
 
 
     connection.query(sql, [post.title, post.body, post.user_id, post.topic_id],  function(err, result){
