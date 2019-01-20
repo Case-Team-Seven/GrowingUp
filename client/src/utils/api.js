@@ -71,7 +71,12 @@ export default {
     ///////////////
     getAllCommentsForAPost: function(post_id) {
         return axios.get("/api/comments/posts/" + post_id);
-    }
+    },
+
+
+    addComment: function(commentData) {
+        return axios.post("/api/comments/add", commentData);
+    },
 
 
 

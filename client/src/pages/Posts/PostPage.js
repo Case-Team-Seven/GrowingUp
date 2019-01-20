@@ -1,11 +1,25 @@
 import React, { Component } from "react";
 import API from "../../utils/api";
-import {Container, Row, Col, Jumbotron, ListGroupItem, ListGroup, Card, Button, CardTitle, CardText} from 'reactstrap';
+import {
+    Container,
+    Row,
+    Col,
+    Jumbotron,
+    ListGroupItem,
+    ListGroup,
+    Card,
+    Button,
+    CardTitle,
+    CardText,
+    Form, FormGroup, Label, Input, FormText
+} from 'reactstrap';
 import './../../components/Forums/ForumPost.css';
+import dateFns from "date-fns";
 
 
 class PostPage extends Component  {
     state = {
+        comment: "",
         post: {},
         comments: []
     };
@@ -20,6 +34,43 @@ class PostPage extends Component  {
             .then(res =>  this.setState({ comments: res.data}))
 
         ).catch(err => console.log(err))
+    };
+
+
+    handleComment = event => {
+        this.setState({comment: event.target.value}, () => {
+            console.log(this.state);
+        });
+
+    }
+
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state)
+
+        let now = Date.now();
+        now = dateFns.format(now, 'YYYY-MM-DD HH:MM:SS')
+
+        const data = {
+            body: this.state.comment,
+            // topic_id: this.state.topicId,
+            post_id: this.state.post.id,
+            user_id: 1,
+            created: now,
+            updated: now,
+
+
+            // file: this.state.file
+        }
+
+        //this isnt capturing your data. you need to grab it from your form inputs
+        console.log(data)
+
+        // axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
+        API.addComment(data).then((res)=>{console.log(res.data.errors)})
+            .catch(error => console.log(error))
+
     }
 
 
@@ -46,6 +97,15 @@ class PostPage extends Component  {
                             </Card>
 
                             <h1> COMMENT BELOW </h1>
+
+                            <Form className="forumForm" onSubmit={this.handleSubmit}>
+                                <FormGroup>
+                                    <Label htmlFor="title" for="exampleText"><h2>Leave a comment:</h2> </Label>
+                                    <Input type="textarea" name="text" onChange={this.handleComment} value={this.state.comment} id="commentText" />
+                                </FormGroup>
+
+                                <Button type="submit" className="formSubmitButton">Add Comment</Button>
+                            </Form>
 
                             <ListGroup>
                                 {
