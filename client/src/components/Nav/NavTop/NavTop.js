@@ -97,7 +97,7 @@ export class NavTop extends React.Component {
       return (
           <div>
             <div className='navItem'>
-              <a href={'/' + page}>
+              <a href={'/' + 'topic/1/posts'}>
                 {page}
               </a>
             </div>  
@@ -109,3 +109,5 @@ export class NavTop extends React.Component {
     return <nav className='navBarTop'>{navLinks}</nav>;
   }
 }
+
+ export default NavTop;
