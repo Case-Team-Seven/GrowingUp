@@ -25,6 +25,7 @@ class PostPage extends Component  {
     };
 
     componentDidMount() {
+        console.log("COMPONENT DID MOUNT")
         // console.log("Component did mount (this): ", this)
         API.getOnePost(this.props.match.params.id)
             .then(res =>  this.setState({ post: res.data}))
@@ -54,32 +55,44 @@ class PostPage extends Component  {
 
         const data = {
             body: this.state.comment,
-            // topic_id: this.state.topicId,
             post_id: this.state.post.id,
             user_id: 1,
-            created: now,
-            updated: now,
+            // created: now,
+            // updated: now,
 
 
             // file: this.state.file
         }
 
         //this isnt capturing your data. you need to grab it from your form inputs
-        console.log(data)
+        // console.log(data);
+        console.log(" HANDLE SUBMIT ADD COMMENT");
 
         // axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
         API.addComment(data).then((res)=>{console.log(res.data.errors)})
             .catch(error => console.log(error))
 
+    };
+
+
+    componentDidUpdate(prevState) {
+        // Typical usage (don't forget to compare props):
+        if (this.state.comments !== prevState.comments) {
+            API.getAllCommentsForAPost(this.props.match.params.id)
+                .then(res =>  this.setState({ comments: res.data}))
+        }
     }
 
 
 
 
 
+
+
+
     render() {
-        console.log("render function (this.state.post): ", this.state.post)
-        console.log("render function (this.state.comments): ", this.state.comments)
+        // console.log("render function (this.state.post): ", this.state.post)
+        // console.log("render function (this.state.comments): ", this.state.comments)
 
 
         return (
@@ -110,7 +123,7 @@ class PostPage extends Component  {
                             <ListGroup>
                                 {
                                     this.state.comments.map(comment =>
-                                        <ListGroupItem key={comment.id} value={comment.id}>  {comment.body}</ListGroupItem>
+                                        <ListGroupItem key={comment.id} value={comment.id}>  {comment.body} :: CREATED: {comment.created} ::: UPDATED: {comment.updated} </ListGroupItem>
 
                                     )}
 

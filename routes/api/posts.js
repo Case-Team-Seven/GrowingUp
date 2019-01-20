@@ -60,16 +60,15 @@ router.post("/add", function(req, res) {
     //res.send('hey whatsup hello')
 
 
-    const sql = "INSERT INTO `posts` (title, body, created, updated, user_id, topic_id) VALUES (?, ?, ?, ?, ?, ?)"
+    const sql = "INSERT INTO `posts` (title, body, user_id, topic_id) VALUES (?, ?, ?, ?, ?, ?)"
 
 
-    connection.query(sql, [post.title, post.body, post.created,
-        post.updated, post.user_id, post.topic_id],  function(err, result){
+    connection.query(sql, [post.title, post.body, post.user_id, post.topic_id],  function(err, result){
         if(err) throw err;
         console.log("1 record inserted");
     });
 
-    res.send(post);
+    res.json(post);
     //res.redirect("/")
 });
 
