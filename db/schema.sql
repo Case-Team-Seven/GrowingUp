@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS  topics (
     id INT AUTO_INCREMENT,
     user_id INT,
     title  VARCHAR(200) NOT NULL,
-    created DATE NOT NULL,
+    created TIMESTAMP NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS  posts (
     body VARCHAR(1000) NOT NULL,
     user_id INT,
     topic_id INT,
-    created DATE,
-    updated DATE,
+    created TIMESTAMP,
+    updated TIMESTAMP,
     PRIMARY KEY (id, user_id, topic_id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS  comments (
     body VARCHAR(3000) NOT NULL,
     user_id INT,
     post_id INT,
-    created DATE,
-    updated DATE,
+    created TIMESTAMP,
+    updated TIMESTAMP,
     PRIMARY KEY (id, user_id, post_id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './ForumForm.css';
 import API from "../../utils/api";
+import dateFns from "date-fns";
+
 
 // import { fileURLToPath } from 'url';
 
@@ -56,6 +58,9 @@ class ForumForm extends Component {
       handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state)
+
+          let now = Date.now();
+        now = dateFns.format(now, 'YYYY-MM-DD HH:MM:SS')
         
         const data = {
             title: this.state.title,
@@ -63,6 +68,8 @@ class ForumForm extends Component {
             // topic_id: this.state.topicId,
             topic_id: this.state.topicId,
             user_id: 1,
+            created: now,
+            updated: now,
 
             // file: this.state.file
         }
