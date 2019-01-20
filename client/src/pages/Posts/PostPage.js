@@ -14,6 +14,8 @@ import {
     Form, FormGroup, Label, Input, FormText
 } from 'reactstrap';
 import './../../components/Forums/ForumPost.css';
+import NavTop from './../../components/Nav/NavTop/NavTop';
+import BackButton from './../../components/Button/BackButton/BackButton';
 import dateFns from "date-fns";
 
 
@@ -94,19 +96,25 @@ class PostPage extends Component  {
         // console.log("render function (this.state.post): ", this.state.post)
         // console.log("render function (this.state.comments): ", this.state.comments)
 
-
         return (
 
             <Container>
+                <div>
+                    <NavTop />
+                </div>
                 <Row id="testRow">
                     <Col sm="6">
+
+                     <BackButton />
+
+
                         <Jumbotron>
                             <Card body>
                                 <CardTitle>{this.state.post.title}</CardTitle>
                                 <CardText>{this.state.post.body}</CardText>
                                 {/* <div>{this.state.post.user_id}</div> */}
                                 {/* <div>{this.state.post.topic_id}</div> */}
-                                {/* <Button>Go somewhere</Button> */}
+
                             </Card>
 
                             <h1> COMMENT BELOW </h1>

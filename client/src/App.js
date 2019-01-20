@@ -21,9 +21,6 @@ const App = () => (
                 <Route exact path="/userProfile/:id" component={UserProfile} />
                 <Route exact path="/topics/:id/posts" component={TopicPosts} />
                 <Route exact path="/posts/:id/" component={PostPage} />
-
-
-
             </Switch>
         </div>
     </Router>
