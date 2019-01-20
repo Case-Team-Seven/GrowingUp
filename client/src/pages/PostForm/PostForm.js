@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import ForumForm from "../../components/Forums/ForumForm";
 // import {  FormGroup, Label, FormText } from "../../components/Forums/ForumForm";
 // import '../../components/Forums/forumPost.css';
-
+import BackButton from './../../components/Button/BackButton/BackButton'
 // import { NavTop } from "../../components/Nav/NavTop/NavTop";
-
+import "./PostForm.css";
 
     class PostForm extends Component {
         state = {
@@ -16,7 +16,9 @@ import ForumForm from "../../components/Forums/ForumForm";
         render() {
             return (  
                 <div>
+                    <BackButton />
                     {/*<NavTop />*/}
+                    <h1 id="addPostTitle">Submit your question here!</h1>
                     <ForumForm /> 
                     {/* <NewPostButton /> */}
                 </div> 

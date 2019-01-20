@@ -50,11 +50,13 @@
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-between;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem;
+    margin-top: -17px;
     margin-right: 7px;
+    padding-top: 1em;
     /* margin-left: 353px; */
     list-style-type: none;
-    z-index: 99;
+    z-index: 93;
     width: 100%;
     overflow: auto;
     /* opacity: 0.6; */

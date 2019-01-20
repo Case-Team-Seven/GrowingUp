@@ -1,0 +1,41 @@
+
+#card {
+    background-color: transparent;
+    border: #14A098 3px solid;
+    color:#0F292F;
+    margin-left: 26em;
+    margin-right: 22em;
+  
+    padding: 2.25rem;
+    position: relative;
+    width: 42em;
+    -webkit-margin-before: 0.1em;
+}
+#card:hover {
+
+ box-shadow: #14A098;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-right: 1em;
+    padding-top: 7em;
+}
+
+
+.fa-user {
+    font-size: 10px;
+    float: right;
+}
+
+#questionOfPost {
+    padding-left: 3em;
+}
+
+#categoryTitle {
+    margin-left: 21em;
+    margin-top: -1em;
+}
