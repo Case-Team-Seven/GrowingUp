@@ -184,6 +184,12 @@
     margin-left: 100px;
 }
 
+#hoverDirections {
+  font-size: 10px;
+  color:white;
+  z-index: 1;
+}
+
   
   
   @media screen and (max-width: 64rem){

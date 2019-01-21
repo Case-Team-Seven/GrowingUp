@@ -52,7 +52,9 @@ class UserProfile extends Component {
                                         <div className="front" >
 						                    <div className="inner">
                                                 <h1 id="userText">{this.state.user.username} </h1>
+                                                <p id="hoverDirections">Hover over card for more info</p>
 						                    </div>
+                                            
 					                    </div>
                                         <div className="back">
 			                                <div className="inner">
