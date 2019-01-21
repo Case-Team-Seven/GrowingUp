@@ -1,6 +1,7 @@
 import React from 'react';
 import OktaAuth from '@okta/okta-auth-js';
 import { withAuth } from '@okta/okta-react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 import config from '../../app.config';
 
@@ -82,45 +83,48 @@ export default withAuth(
       }
 
       return (
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-element">
-            <label>Email:</label>
-            <input
+        <Form onSubmit={this.handleSubmit}>
+          <FormGroup className="form-element">
+            <Label for="email">Email:</Label>
+            <Input
               type="email"
               id="email"
+              placeholder="example@something.com"
               value={this.state.email}
               onChange={this.handleEmailChange}
             />
-          </div>
-          <div className="form-element">
-            <label>First Name:</label>
-            <input
+          </FormGroup>
+          <FormGroup className="form-element">
+            <Label for="firstName">First Name:</Label>
+            <Input
               type="text"
               id="firstName"
+              placeholder="Enter your first name here"
               value={this.state.firstName}
               onChange={this.handleFirstNameChange}
             />
-          </div>
-          <div className="form-element">
-            <label>Last Name:</label>
-            <input
+          </FormGroup>
+          <FormGroup className="form-element">
+            <Label for="lastName">Last Name:</Label>
+            <Input
               type="text"
               id="lastName"
+              placeholder="Enter your last name here"
               value={this.state.lastName}
               onChange={this.handleLastNameChange}
             />
-          </div>
-          <div className="form-element">
-            <label>Password:</label>
-            <input
+          </FormGroup>
+          <FormGroup>
+            <Label for="password">Password:</Label>
+            <Input
               type="password"
               id="password"
               value={this.state.password}
               onChange={this.handlePasswordChange}
             />
-          </div>
-          <input type="submit" id="submit" value="Register" />
-        </form>
+          </FormGroup>
+          <Button type="submit" id="submit" value="Register">Submit</Button>
+        </Form>
       );
     }
   }

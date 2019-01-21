@@ -1,6 +1,9 @@
 import React from 'react';
 import OktaAuth from '@okta/okta-auth-js';
 import { withAuth } from '@okta/okta-react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import './LoginForm.css'
+
 
 export default withAuth(
   class LoginForm extends React.Component {
@@ -57,20 +60,20 @@ export default withAuth(
       ) : null;
 
       return (
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} className="LoginPageDiv">
           {errorMessage}
-          <div className="form-element">
-            <label>Username:</label>
-            <input
+          <FormGroup className="userLogDiv">
+            <Label>Username: </Label>
+            <Input
               id="username"
               type="text"
               value={this.state.username}
               onChange={this.handleUsernameChange}
             />
-          </div>
+          </FormGroup>
 
-          <div className="form-element">
-            <label>Password:</label>
+          <div className="passwordLogDiv">
+            <label>Password: </label>
             <input
               id="password"
               type="password"
@@ -78,8 +81,8 @@ export default withAuth(
               onChange={this.handlePasswordChange}
             />
           </div>
-          <input id="submit" type="submit" value="Submit" />
-        </form>
+          <input id="submit" type="submit" value="Submit" className="LoginBtn" />
+        </Form>
       );
     }
   }
