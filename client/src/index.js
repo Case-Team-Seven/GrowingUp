@@ -4,8 +4,31 @@ import './index.css';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
 import 'reactstrap';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Security } from '@okta/okta-react';
+import config from './app.config';
+//import unregister from './serviceWorker.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function onAuthRequired({ history }) {
+  history.push('/login');
+}
+
+ReactDOM.render(
+  <Router>
+    <Security
+      issuer={config.issuer}
+      client_id={config.client_id}
+      redirect_uri={config.redirect_uri}
+      onAuthRequired={onAuthRequired}
+    >
+      <App />
+    </Security>
+  </Router>,
+  document.getElementById('root')
+);
+//registerServiceWorker();
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
