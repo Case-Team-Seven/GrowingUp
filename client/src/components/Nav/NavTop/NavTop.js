@@ -122,7 +122,8 @@ class NavTop extends React.Component {
                 <span id="front">Home</span>
                 <span id="back">Home</span>
               </span>
-            </NavLink></NavItem>
+            </NavLink>
+            </NavItem>
             <NavItem className="navItem"><NavLink href="/userProfile/1" className="three-d">
             Your Account 
               <span aria-hidden="true" className="three-d-box">
