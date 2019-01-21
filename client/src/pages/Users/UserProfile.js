@@ -3,6 +3,7 @@ import API from "../../utils/api";
 import {Container, Row, Col, Jumbotron} from 'reactstrap'
 import './UserProfile.css';
 import NavTop from "../../components/Nav/NavTop/NavTop";
+
 import BackButton from "../../components/Button/BackButton/BackButton";
 
 class UserProfile extends Component {
