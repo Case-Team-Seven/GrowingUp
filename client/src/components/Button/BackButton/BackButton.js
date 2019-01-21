@@ -13,7 +13,7 @@ export default class Example extends React.Component {
     render() {
         return (
             <div class="backButtonDiv">
-                <Link to='/topic/1/posts/'>
+                <Link to='/topics/1/posts/'>
                     <Button outline color="primary" className="backButtonClass">Back</Button>
                 </Link>
             </div>

@@ -8,7 +8,7 @@ export default class Example extends React.Component {
             <div className="mainCategoryList">
                 <h2 id="catListH2">CategoryList </h2>
                 {/* <p>Be sure to <strong>not use the standard <code>.btn</code> classes here</strong>.</p> */}
-                <ListGroup className="listGroupCatList">
+                <ListGroup id="catListUl"className="listGroupCatList">
                     <ListGroupItem className="FinanceLink" active tag="a" href="/topic/1/posts" action>Finance</ListGroupItem>
                     <hr id="catListHr" ></hr>
                     <ListGroupItem className="EducationLink" tag="a" href="/topic/2/posts" action>Education</ListGroupItem>

@@ -11,12 +11,14 @@ import {
     Button,
     CardTitle,
     CardText,
-    Form, FormGroup, Label, Input, FormText
+    Form, FormGroup, Label, Input, FormText, 
 } from 'reactstrap';
 import './../../components/Forums/ForumPost.css';
 import NavTop from './../../components/Nav/NavTop/NavTop';
 import BackButton from './../../components/Button/BackButton/BackButton';
 import dateFns from "date-fns";
+import { Link } from "react-router-dom";
+import './PostPage.css';
 
 
 class PostPage extends Component  {
@@ -112,11 +114,12 @@ class PostPage extends Component  {
                             <Card body>
                                 <CardTitle>{this.state.post.title}</CardTitle>
                                 <CardText>{this.state.post.body}</CardText>
-                                {/* <div>{this.state.post.user_id}</div> */}
-                                {/* <div>{this.state.post.topic_id}</div> */}
+                                
+                                  <Link id="userProfileLink" to={"/userProfile/:id"}><i class="fas fa-user"> User: {this.state.post.user_id}</i></Link>
+                                
 
                             </Card>
-
+                                {/* <div>{this.state.post.topic_id}</div> */}
                             <h1> COMMENT BELOW </h1>
 
                             <Form className="forumForm" onSubmit={this.handleSubmit}>

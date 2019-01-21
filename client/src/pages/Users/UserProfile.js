@@ -3,6 +3,7 @@ import API from "../../utils/api";
 import {Container, Row, Col, Jumbotron} from 'reactstrap'
 import './UserProfile.css';
 import NavTop from "../../components/Nav/NavTop/NavTop";
+
 import BackButton from "../../components/Button/BackButton/BackButton";
 
 class UserProfile extends Component {
@@ -51,7 +52,9 @@ class UserProfile extends Component {
                                         <div className="front" >
 						                    <div className="inner">
                                                 <h1 id="userText">{this.state.user.username} </h1>
+                                                <p id="hoverDirections">Hover over card for more info</p>
 						                    </div>
+                                            
 					                    </div>
                                         <div className="back">
 			                                <div className="inner">
