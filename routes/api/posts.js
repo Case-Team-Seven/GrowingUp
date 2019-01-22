@@ -50,7 +50,7 @@ router.get("/topics/:id", function(req, res) {
 
 
 
-// api/users/add
+// api/posts/add
 router.post("/add", function(req, res) {
 
     const post = req.body;
@@ -70,6 +70,23 @@ router.post("/add", function(req, res) {
 
     res.json(post);
     //res.redirect("/")
+});
+
+
+
+// /api/posts/mostRecent
+
+router.get("/mostRecent", function(req, res) {
+
+    const sql = "SELECT * FROM posts WHERE order by created desc LIMIT 20"
+
+    connection.query(sql, function(err, results) {
+        if (err) throw err;
+
+        res.json(results)
+
+    });
+
 });
 
 

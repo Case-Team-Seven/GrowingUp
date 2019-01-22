@@ -63,6 +63,11 @@ export default {
         // console.log("Post Data: ", postData);
         return axios.post("/api/posts/add", postData);
     },
+    
+    getMostRecent: function() {
+        return axios.get("/api/posts/mostRecent");
+    },
+    
 
 
 
