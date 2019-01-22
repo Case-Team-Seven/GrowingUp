@@ -1,0 +1,24 @@
+.renderPost {
+    display: list-item;
+    margin-left: 26em;
+}
+
+.post-editor-button {
+    float: right;
+    margin-top: 1em;
+}
+
+.post-body {
+    margin: 1em 20%;
+}
+
+@media(max-width: 900px) {
+    .post-editor {
+        margin: 1em;
+    }
+
+    .post-body {
+        margin: 1em;
+    }
+}
+

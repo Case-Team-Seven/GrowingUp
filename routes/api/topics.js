@@ -2,7 +2,7 @@ const router = require("express").Router();
 const  connection = require("../../db/connection.js");
 
 
-
+// all topics
 // api/topics
 router.get("/", function(req, res) {
 
@@ -17,6 +17,7 @@ router.get("/", function(req, res) {
 
 });
 
+// one topic
 // api/topics/id
 router.get("/:id", function(req, res) {
 
@@ -25,14 +26,31 @@ router.get("/:id", function(req, res) {
     connection.query(sql, function(err, results) {
         if (err) throw err;
 
-        res.json(results)
+        res.json(results[0]);
 
     });
 
 });
 
 
+// api/users/add
+router.post("/add", function(req, res) {
 
+    const topic = req.body;
+    console.log("REQ.BODY", req.body);
+
+    const sql = "INSERT INTO `topics` (user_id, title, created) VALUES (?, ?, ?)"
+
+
+    connection.query(sql, [topic.user_id, topic.title, topic.created,
+        ],  function(err, result){
+        if(err) throw err;
+        console.log("1 record inserted");
+    });
+
+    // res.send(user);
+    res.redirect("/")
+});
 
 
 

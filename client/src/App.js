@@ -1,42 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import {NavTop} from "./components/Nav/NavTop/NavTop";
-import LogIn from "./components/LogIn/LogIn";
-import CategoryList from "./components/CategoryList/CategoryList";
-import ForumPost from "./components/Forums/ForumPost";
-import ForumForm from "./components/Forums/ForumForm";
-import NewPostButton from './components/Button/NewPost/NewPostButton'; 
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import './App.css';
-import { Button } from 'reactstrap';
-import Post from './components/Forums/Post';
+import './components/CategoryList/CategoryList.css';
 
 
-class App extends Component {
-    render() {
-        return (
-            <div className="mainContainer">
-                
+import UserProfile from "./pages/Users/UserProfile";
+import TopicPosts from "./pages/Posts/TopicPosts";
+import PostForm from "./pages/PostForm/PostForm";
+import PostPage from "./pages/Posts/PostPage";
 
-                    <NavTop render={<h1>Grownupish</h1>}/>
-                    <NewPostButton />
-                
-                <div className="logInContainer" >
-                    <LogIn />
-                </div>
-                <div className="logInContainer">
-                    <CategoryList />
-                </div>
-                <div className="forumsContainer">
-                    <ForumPost />
-                    <Post  />
-                    
-                </div>
-                <div className="forumsFormContainer">
-                    <ForumForm />
-                </div>
-            </div>
-        );
-    }
-}
+
+
+const App = () => (
+    <Router>
+        <div>
+            <Switch>
+                {/*<Route exact path="/" component={Home} />*/}
+                <Route exact path="/addPost" component={PostForm} />
+                <Route exact path="/userProfile/:id" component={UserProfile} />
+                <Route exact path="/topics/:id/posts" component={TopicPosts} />
+                <Route exact path="/posts/:id/" component={PostPage} />
+            </Switch>
+        </div>
+    </Router>
+);
+
 
 export default App;

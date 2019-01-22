@@ -1,9 +1,8 @@
 .mainCategoryList {
     margin: -3px;
-    /* position: absolute; */
     position: fixed;
-    margin-top: auto;
-    padding-top: 65px;
+    margin-top: 5em;
+    margin-left: 1em;
 }
 /* hello */
 
@@ -12,9 +11,14 @@
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
+    padding-right: 1em;
+    padding-top: 1em;
+    -webkit-margin-start: -1em;
+    margin-inline-start: -1em;
+    padding-top: 1em;
 }
 
-ul, menu, dir {
+#catListUl, menu, dir {
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
@@ -24,16 +28,33 @@ ul, menu, dir {
     padding-inline-start: 40px;
     border: 5px solid black;
 }
-
+/* 
 hr {
     background-color: black;
     width: 248px;
-}
+} */
 
 h2 {
     color: #0F292F;;
 }
 
 .a {
-    color: #0F292F;;
+    color: #0F292F;
+    
+}
+
+a {
+    color: white;
+    margin-left: 0.5em;
+}
+#catListHr {
+    width: 216px;
+}
+
+.listGroupCatList #catListH2 {
+    margin-top:1em;
+}
+
+#catListH2{
+    margin-top:1em;
 }

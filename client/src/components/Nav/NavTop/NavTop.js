@@ -1,17 +1,17 @@
 import React from 'react';
 import './NavTop.css';
-// import {
-//   Collapse,
-//   Navbar,
-//   NavbarToggler,
-//   NavbarBrand,
-//   Nav,
-//   NavItem,
-//   NavLink,
-//   UncontrolledDropdown,
-//   DropdownToggle,
-//   DropdownMenu,
-//   DropdownItem } from 'reactstrap';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
 // export default class Example extends React.Component {
 //   constructor(props) {
@@ -87,25 +87,57 @@ import './NavTop.css';
 
 // import React from 'react';
 
-export class NavTop extends React.Component {
-  render() {
-    const pages = ['', '','Option 1', 'LogIn/SignUp'];
-    
-      
-    
-    const navLinks = pages.map(page => {
-      return (
-          <div>
-            <div className='navItem'>
-              <a href={'/' + page}>
-                {page}
-              </a>
-            </div>  
-          </div>
-          
-      )
-    });
+class NavTop extends React.Component {
+ 
 
-    return <nav className='navBarTop'>{navLinks}</nav>;
-  }
-}
+  // constructor(props) {
+  //   super(props);
+
+  //   this.toggle = this.toggle.bind(this);
+  //   this.state = {
+  //     isOpen: false
+  //   };
+  // }
+  // toggle() {
+  //   this.setState({
+  //     isOpen: !this.state.isOpen
+  //   });
+  // }
+
+  render() {
+      return (
+          // <Nav>
+          //   <NavItem className='navItem'>
+          //     <a href={'/topics/:id/posts'}>Home</a>
+          //   </NavItem>
+          //   <NavItem className='navItem'>
+          //     <a href={'/topics/:id/posts'}>Home</a>
+          //   </NavItem>
+          // </Nav>
+        <Navbar className="nav">
+          <Nav className="block-menu">
+            <NavItem className="navItem"><NavLink href="/topics/1/posts" className="three-d">
+            Home
+              <span aria-hidden="true" className="three-d-box">
+                <span id="front">Home</span>
+                <span id="back">Home</span>
+              </span>
+            </NavLink>
+            </NavItem>
+            <NavItem className="navItem"><NavLink href="/userProfile/1" className="three-d">
+            Your Account 
+              <span aria-hidden="true" className="three-d-box">
+                <span id="front">Your Account</span>
+                <span id="back">Your Account</span>
+              </span>
+            </NavLink ></NavItem>
+            
+          </Nav>
+        </Navbar>
+      )
+    };
+  
+    
+};
+
+export default NavTop;
