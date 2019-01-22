@@ -132,9 +132,25 @@ class PostPage extends Component  {
                             </Form>
 
                             <ListGroup>
+                                
                                 {
                                     this.state.comments.map(comment =>
-                                        <ListGroupItem key={comment.id} value={comment.id}>  {comment.body} :: CREATED: {comment.created} ::: UPDATED: {comment.updated} </ListGroupItem>
+                                        
+                                        
+                                        
+                                       
+                                       
+                                    <ListGroupItem 
+                                        key={comment.id} 
+                                        value={comment.id} className="triangle-right" > 
+                                            <p className="triangle-right">
+                                                {/* <p class="triangle-right">[text]</p>  */}
+                                                {comment.body} :: <br></br>
+                                                CREATED: {comment.created}<br>
+                                                </br> 
+                                                ::: UPDATED: {comment.updated}
+                                            </p>
+                                        </ListGroupItem>
 
                                     )}
 
