@@ -19,7 +19,7 @@ import BackButton from './../../components/Button/BackButton/BackButton';
 import dateFns from "date-fns";
 import { Link } from "react-router-dom";
 import './PostPage.css';
-
+//
 
 class PostPage extends Component  {
     state = {
