@@ -8,8 +8,7 @@
         padding:15px;
         margin:1em 0 3em;
         color:#fff;
-        background:#075698; /* default background for browsers without gradient support */
-        /* css3 */
+        background:#075698; 
         background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
         background:-moz-linear-gradient(#2e88c4, #075698);
         background:-o-linear-gradient(#2e88c4, #075698);
@@ -17,7 +16,54 @@
         -webkit-border-radius:10px;
         -moz-border-radius:10px;
         border-radius:10px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        /* margin-left: 75em; */
+        padding-right: 1em;
+        width: 34em;
+        margin-left: 26em;
+        margin-right: 22em;
+        padding-top: 7em;
+        list-style: none;
       }
 
   
+
+      .commentBody {
+        margin-top:-70px;
+        margin-top: -60px;
+        margin-left: 2em;
+      }
+
+      .commentDate {
+        margin-left: 342px;
+      }
     
+      .block-menue{
+        display: block;
+        background: #0F292F;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        margin-top: 0em;
+    }
+      
+    .card-bodyPostPage {
+        height: 238px;
+        margin-left: 26em;
+        margin-right: 22em;
+        /* flex: 11 1 auto; */
+        padding: 2.25rem;
+        position: relative;
+        width: 41em;
+        -webkit-margin-before: 6.1em;
+    }
+
+
+    .fa-user {
+        font-size: 15px;
+        float: right;
+        margin-top: 3em;
+    }
