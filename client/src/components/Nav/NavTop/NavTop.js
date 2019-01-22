@@ -130,7 +130,16 @@ class NavTop extends React.Component {
                 <span id="front">Your Account</span>
                 <span id="back">Your Account</span>
               </span>
-            </NavLink ></NavItem>
+            </NavLink >
+            </NavItem>
+            <NavItem className="navItem"><NavLink href="/login" className="three-d">
+            Login/Sign-Up 
+              <span aria-hidden="true" className="three-d-box">
+                <span id="front">Login/Sign-Up</span>
+                <span id="back">Login/Sign-Up</span>
+              </span>
+            </NavLink >
+            </NavItem>
             
           </Nav>
         </Navbar>
