@@ -50,30 +50,6 @@ router.get("/topics/:id", function(req, res) {
 
 
 
-// // api/users/add
-// router.post("/add", function(req, res) {
-//
-//     const post = req.body;
-//     console.log("U HIT ME");
-//     console.log(req.body)
-//
-//     //res.send('hey whatsup hello')
-//
-//
-//     //const sql = "INSERT INTO `posts` (title, body, created, updated, user_id, topic_id) VALUES (?, ?, ?, ?, ?, ?)"
-//
-//
-//     // connection.query(sql, [post.title, post.body, post.created,
-//     //     post.updated, post.user_id, post.topic_id],  function(err, result){
-//     //     if(err) throw err;
-//     //     console.log("1 record inserted");
-//     // });
-//
-//     // res.send(user);
-//     //res.redirect("/")
-// });
-
-
 // api/users/add
 router.post("/add", function(req, res) {
 
@@ -81,20 +57,43 @@ router.post("/add", function(req, res) {
     console.log("U HIT ME");
     console.log(req.body)
 
-    res.send('hey whatsup hello')
+    //res.send('hey whatsup hello')
 
 
-    const sql = "INSERT INTO `posts` (title, body, topic_id, user_id) VALUES (?, ?, ?, ?)"
+    const sql = "INSERT INTO `posts` (title, body, user_id, topic_id) VALUES (?, ?, ?, ?)"
 
 
-    connection.query(sql, [post.title, post.body, post.topic_id, post.user_id],  function(err, result){
+    connection.query(sql, [post.title, post.body, post.user_id, post.topic_id],  function(err, result){
         if(err) throw err;
         console.log("1 record inserted");
     });
 
-    res.send(post);
-    // res.redirect("/")
+    res.json(post);
+    //res.redirect("/")
 });
+
+
+// // api/users/add
+// router.post("/add", function(req, res) {
+//
+//     const post = req.body;
+//     console.log("U HIT ME");
+//     console.log(req.body)
+//
+//     res.send('hey whatsup hello')
+//
+//
+//     const sql = "INSERT INTO `posts` (title, body, topic_id, user_id) VALUES (?, ?, ?, ?)"
+//
+//
+//     connection.query(sql, [post.title, post.body, post.topic_id, post.user_id],  function(err, result){
+//         if(err) throw err;
+//         console.log("1 record inserted");
+//     });
+//
+//     res.send(post);
+//     // res.redirect("/")
+// });
 
 
 
