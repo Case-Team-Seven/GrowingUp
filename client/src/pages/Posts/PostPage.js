@@ -58,7 +58,7 @@ class PostPage extends Component  {
         const data = {
             body: this.state.comment,
             post_id: this.state.post.id,
-            user_id: this.state.user_id,
+            user_id: 1,
             // created: now,
             // updated: now,
 

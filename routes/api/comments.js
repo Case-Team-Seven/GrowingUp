@@ -33,20 +33,41 @@ router.get("/:id", function(req, res) {
 
 //get all comments for a post
 //api/comments/posts/id
+// router.get("/posts/:id", function(req, res) {
+//
+//     const sql = "SELECT * FROM comments WHERE post_id = " + req.params.id;
+//
+//
+//     connection.query(sql, function(err, results) {
+//         if (err) throw err;
+//
+//         // console.log("commments for post" + req.params.id, results)
+//        return  res.json(results)
+//
+//     });
+//
+// });
+
+
+//get all comments for a post
+//api/comments/posts/id
 router.get("/posts/:id", function(req, res) {
 
-    const sql = "SELECT * FROM comments WHERE post_id = " + req.params.id;
+    const sql = "select * from comments\n" +
+        "join users u ON comments.user_id = u.id\n" +
+        "where comments.post_id = " + req.params.id;
 
 
     connection.query(sql, function(err, results) {
         if (err) throw err;
 
         // console.log("commments for post" + req.params.id, results)
-       return  res.json(results)
+        return  res.json(results)
 
     });
 
 });
+
 // api/comments/add
 router.post("/add", function(req, res) {
 
