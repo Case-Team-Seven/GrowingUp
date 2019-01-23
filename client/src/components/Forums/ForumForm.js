@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './ForumForm.css';
 import API from "../../utils/api";
 import dateFns from "date-fns";
+import { withRouter } from "react-router";
 
 
 // import { fileURLToPath } from 'url';
@@ -80,6 +81,13 @@ class ForumForm extends Component {
         // axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
         API.createPost(data).then((res)=>{console.log(res.data.errors)})
         .catch(error => console.log(error))
+
+
+          this.setState({
+              title: "",
+              topicId: "",
+              question: "",
+          });
       }
 
       
@@ -126,7 +134,7 @@ class ForumForm extends Component {
                     </FormText>
                 </FormGroup>
                 <br></br>
-                <Button type="submit" href="/topics/1/posts" className="formSubmitButton">Submit</Button> 
+                <Button type="submit"  className="formSubmitButton">Submit</Button>
             </Form>
 
             

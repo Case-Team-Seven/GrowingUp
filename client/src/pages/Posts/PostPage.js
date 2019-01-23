@@ -51,8 +51,6 @@ class PostPage extends Component  {
         event.preventDefault();
         console.log(this.state)
 
-        let now = Date.now();
-        now = dateFns.format(now, 'YYYY-MM-DD HH:MM:SS')
 
         const data = {
             body: this.state.comment,
@@ -71,6 +69,9 @@ class PostPage extends Component  {
             .then((res)=>{console.log(res.data.errors)})
             .catch(error => console.log(error))
 
+        this.setState({
+            comment: ''
+        });
     };
 
 
@@ -120,8 +121,6 @@ class PostPage extends Component  {
                                 
 
                             </Card>
-                                {/* <div>{this.state.post.topic_id}</div> */}
-                            <h1> COMMENT BELOW </h1>
 
                             <Form className="forumForm" onSubmit={this.handleSubmit}>
                                 <FormGroup>
@@ -144,10 +143,8 @@ class PostPage extends Component  {
                                                                                             {/* <p class="triangle-right">[text]</p>  */}
                                                 <h3 className="commentBody">{comment.body}</h3>
                                                 <br></br>
-                                                <h6 className="commentDate">Created on: {comment.created}
-
-                                                <br></br>Updated: {comment.updated}
-                                          </h6>
+                                        <h6 className="commentDate">{dateFns.format(comment.created, 'MM-DD-YYYY')} </h6>
+                                       <h6 className="commentDate" ><i className="fas fa-user"></i> {comment.username} </h6>
                                         </ListGroupItem>
 
                                     )}

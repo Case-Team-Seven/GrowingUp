@@ -1,9 +1,10 @@
 import React from 'react';
 import OktaAuth from '@okta/okta-auth-js';
 import { withAuth } from '@okta/okta-react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
+import { Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import NavTop from '../Nav/NavTop/NavTop'
 import config from '../../app.config';
+import './RegistrationForm.css'
 
 export default withAuth(
   class RegistrationForm extends React.Component {
@@ -14,6 +15,7 @@ export default withAuth(
         lastName: '',
         email: '',
         password: '',
+          displayName: '',
         sessionToken: null
       };
       this.oktaAuth = new OktaAuth({ url: config.url });
@@ -23,7 +25,9 @@ export default withAuth(
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
       this.handleLastNameChange = this.handleLastNameChange.bind(this);
-      this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleDisplayNameChange = this.handleDisplayNameChange.bind(this);
+
+        this.handleEmailChange = this.handleEmailChange.bind(this);
       this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 
@@ -43,6 +47,9 @@ export default withAuth(
     }
     handleLastNameChange(e) {
       this.setState({ lastName: e.target.value });
+    }
+    handleDisplayNameChange(e) {
+      this.setState({ displayName: e.target.value });
     }
     handleEmailChange(e) {
       this.setState({ email: e.target.value });
@@ -77,54 +84,76 @@ export default withAuth(
     }
 
     render() {
+     
       if (this.state.sessionToken) {
         this.props.auth.redirect({ sessionToken: this.state.sessionToken });
         return null;
       }
 
       return (
-        <Form onSubmit={this.handleSubmit}>
-          <FormGroup className="form-element">
-            <Label for="email">Email:</Label>
+        
+        
+        
+        <Container>
+        <NavTop />
+        <br></br>
+        
+        <div id='regForm'>
+        <h1 className='regTitle'>Registration</h1>
+        <div id='innerRegForm'>
+        <Form onSubmit={this.handleSubmit} className="pure-form">
+          <FormGroup className="form-element">            
             <Input
               type="email"
               id="email"
-              placeholder="example@something.com"
+              placeholder="Email"
               value={this.state.email}
               onChange={this.handleEmailChange}
             />
           </FormGroup>
           <FormGroup className="form-element">
-            <Label for="firstName">First Name:</Label>
             <Input
               type="text"
               id="firstName"
-              placeholder="Enter your first name here"
+              placeholder="First Name"
               value={this.state.firstName}
               onChange={this.handleFirstNameChange}
             />
           </FormGroup>
           <FormGroup className="form-element">
-            <Label for="lastName">Last Name:</Label>
             <Input
               type="text"
               id="lastName"
-              placeholder="Enter your last name here"
+              placeholder="Last Name"
               value={this.state.lastName}
               onChange={this.handleLastNameChange}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="password">Password:</Label>
+          <FormGroup className="form-element">
+            <Input
+              type="text"
+              id="displayName"
+              placeholder="Display Name"
+              value={this.state.displayName}
+              onChange={this.handleDisplayNameChange}
+            />
+          </FormGroup>
+          <FormGroup className="form-element">
             <Input
               type="password"
               id="password"
+              placeholder="Password"
               value={this.state.password}
               onChange={this.handlePasswordChange}
             />
-          </FormGroup>
-          <Button type="submit" id="submit" value="Register">Submit</Button>
+          </FormGroup>           
+          <p className='passwordNotice'>Password must be 8-15 characters long and include a capital letter and a number</p>
+          
+          <Button type="submit" id="submit" value="Register" className="regBtn">Submit</Button>
         </Form>
+        </div>
+        </div>
+        </Container>
       );
     }
   }
