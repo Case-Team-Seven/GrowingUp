@@ -5,11 +5,9 @@ export default {
     ///////////////
     //USERS
     ///////////////
-    // Gets all users
     getUsers: function() {
         return axios.get("/api/users");
     },
-    // Gets the user with the given id
     getUser: function(id) {
        // const users = axios.get("/api/users/" + id);
        // console.log ("Axios API Users: ",  users)
@@ -22,7 +20,6 @@ export default {
     //TAGS
     ///////////////
 
-    //get all tags
     getAllTags: function() {
         return axios.get("/api/tags")
     },
@@ -32,13 +29,11 @@ export default {
     //TOPiC
     ///////////////
 
-    //get all topics
     getAllTopics: function() {
         return axios.get("/api/topics")
     },
 
 
-    //get one topics
     getTopic: function(topic_id) {
         return axios.get("/api/topics/" +topic_id)
     },
@@ -48,7 +43,6 @@ export default {
     //POSTS
     ///////////////
 
-    //get one Post
     getOnePost: function(post_id) {
 
         return axios.get("/api/posts/" + post_id)
@@ -58,7 +52,6 @@ export default {
         return axios.get("/api/posts/topics/" + topic_id)
     },
 
-    // Saves a post to the database
     createPost: function(postData) {
         // console.log("Post Data: ", postData);
         return axios.post("/api/posts/add", postData);
@@ -81,7 +74,7 @@ export default {
 
     addComment: function(commentData) {
         return axios.post("/api/comments/add", commentData);
-    },
+    }
 
 
 

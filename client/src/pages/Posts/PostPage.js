@@ -58,7 +58,7 @@ class PostPage extends Component  {
         const data = {
             body: this.state.comment,
             post_id: this.state.post.id,
-            user_id: 1,
+            user_id: this.state.user_id,
             // created: now,
             // updated: now,
 
@@ -95,6 +95,7 @@ class PostPage extends Component  {
 
 
     render() {
+        console.log("post: ", this.state.post)
         // console.log("render function (this.state.post): ", this.state.post)
         // console.log("render function (this.state.comments): ", this.state.comments)
         console.log("this.state.comments.length" , this.state.comments.length)
@@ -116,7 +117,7 @@ class PostPage extends Component  {
                                 <CardTitle>{this.state.post.title}</CardTitle>
                                 <CardText>{this.state.post.body}</CardText>
                                 
-                                  <Link id="userProfileLink" to={"/userProfile/:id"}><i class="fas fa-user"> User: {this.state.post.user_id}</i></Link>
+                                  <Link id="userProfileLink" to={"/userProfile/:id"}><i class="fas fa-user"> User: {this.state.post.username}</i></Link>
                                 
 
                             </Card>

@@ -2,14 +2,32 @@ const router = require("express").Router();
 const  connection = require("../../db/connection.js");
 
 
-
 // api/posts
 router.get("/", function(req, res) {
 
-    const sql = "SELECT * FROM posts;"
+    const sql = "SELECT * FROM posts";
 
     connection.query(sql, function(err, results) {
         if (err) throw err;
+
+        res.json(results);
+
+    });
+
+});
+
+
+
+// api/posts/recent
+router.get("/recent", function(req, res) {
+
+    const sql = "select * from posts\n" +
+        "join(select count(*) commentCount from comments c, posts  where posts.id = c.post_id) as com\n" +
+        "join(select topics.title topicTitle from topics, posts where posts.topic_id = topics.id) as top\n" +
+        "order by created desc;\n"
+
+    connection.query(sql, function(err, results) {
+        if (err) {throw err; }
 
         res.json(results)
 
@@ -17,20 +35,43 @@ router.get("/", function(req, res) {
 
 });
 
+
+
+
+//get a single post
+// api/posts/id
+// router.get("/:id", function(req, res) {
+//
+//     const sql = "SELECT * FROM posts WHERE id = "+ req.params.id;
+//
+//     connection.query(sql, function(err, results) {
+//         if (err) {throw err;}
+//
+//         res.json(results[0]);
+//
+//     });
+//
+// });
+
+//NEW
 //get a single post
 // api/posts/id
 router.get("/:id", function(req, res) {
 
-    const sql = "SELECT * FROM posts WHERE id = "+ req.params.id;
+    const sql = "select * from posts\n" +
+        "  join(select users.username from users, posts where posts.user_id = users.id) as post\n" +
+        "where posts.id =" + req.params.id;
 
     connection.query(sql, function(err, results) {
-        if (err) throw err;
+        if (err) {throw err;}
 
         res.json(results[0]);
 
     });
 
 });
+
+
 
 //get all posts for a topic
 // api/posts/topics/id
@@ -54,11 +95,6 @@ router.get("/topics/:id", function(req, res) {
 router.post("/add", function(req, res) {
 
     const post = req.body;
-    console.log("U HIT ME");
-    console.log(req.body)
-
-    //res.send('hey whatsup hello')
-
 
     const sql = "INSERT INTO `posts` (title, body, user_id, topic_id) VALUES (?, ?, ?, ?)"
 
@@ -69,48 +105,8 @@ router.post("/add", function(req, res) {
     });
 
     res.json(post);
-    //res.redirect("/")
 });
 
-
-
-// /api/posts/mostRecent
-
-router.get("/mostRecent", function(req, res) {
-
-    const sql = "SELECT * FROM posts WHERE order by created desc LIMIT 20"
-
-    connection.query(sql, function(err, results) {
-        if (err) throw err;
-
-        res.json(results)
-
-    });
-
-});
-
-
-// // api/users/add
-// router.post("/add", function(req, res) {
-//
-//     const post = req.body;
-//     console.log("U HIT ME");
-//     console.log(req.body)
-//
-//     res.send('hey whatsup hello')
-//
-//
-//     const sql = "INSERT INTO `posts` (title, body, topic_id, user_id) VALUES (?, ?, ?, ?)"
-//
-//
-//     connection.query(sql, [post.title, post.body, post.topic_id, post.user_id],  function(err, result){
-//         if(err) throw err;
-//         console.log("1 record inserted");
-//     });
-//
-//     res.send(post);
-//     // res.redirect("/")
-// });
 
 
 
