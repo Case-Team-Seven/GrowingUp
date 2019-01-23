@@ -15,6 +15,7 @@ export default withAuth(
         lastName: '',
         email: '',
         password: '',
+          displayName: '',
         sessionToken: null
       };
       this.oktaAuth = new OktaAuth({ url: config.url });
@@ -24,7 +25,9 @@ export default withAuth(
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
       this.handleLastNameChange = this.handleLastNameChange.bind(this);
-      this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleDisplayNameChange = this.handleDisplayNameChange.bind(this);
+
+        this.handleEmailChange = this.handleEmailChange.bind(this);
       this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 

@@ -24,13 +24,6 @@ class TopicPosts extends Component  {
             .catch(err => console.log(err));
     }
 
-    getTopicInfo() {
-
-    }
-
-
-
-
     render() {
 
         console.log("Render Posts: ", this.state.posts)
@@ -52,10 +45,7 @@ class TopicPosts extends Component  {
                                 
                                 <ListGroupItem key={post.id} value={post.id}> 
 
-                                    {/* <Card body>
-                                        <Link to={'/posts/'+ post.id} >{post.title}</Link>
-                                    </Card> */}
-                                    
+
                                     <Row id="testRow">
                                     
                                         <Col sm="6">
@@ -67,7 +57,6 @@ class TopicPosts extends Component  {
                                                     <CardText id="questionOfPost">
                                                         {post.body}
                                                     </CardText>
-                                                    {/* <Button>This is where the imported comment button may go</Button> */}
                                                     <div>
                                                         <i className="fas fa-user">{post.username}</i>
                                                         <i className="fas fa-comment">Comments: {post.commentCount}</i>
