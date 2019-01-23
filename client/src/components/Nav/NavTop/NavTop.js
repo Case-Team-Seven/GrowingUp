@@ -1,6 +1,5 @@
 import React from 'react';
 import './NavTop.css';
-import Logo2 from '../../Logo/logo'
 import {
   Collapse,
   Navbar,
@@ -139,12 +138,7 @@ class NavTop extends React.Component {
 
   render() {
     //if (this.state.authenticated === null) return null;
-    var icon = (
-      <span class="logo">
-        <a href="/">
-          <img src="../../Logo/logo.png" height="33" width="120" alt="text here" /></a>
-      </span>
-    );
+    
 
     const button = this.state.authenticated ? 'Logout' : 'Login';
       return (
@@ -158,7 +152,10 @@ class NavTop extends React.Component {
           // </Nav>
         <Navbar className="nav">
           <Nav className="block-menu">
+          <NavItem>
           <img src={require('../../Logo/logo.png')} id="logoDiv" />
+          </NavItem>
+          <div id='navBtns'>
             <NavItem className="navItem"><NavLink href="/topics/1/posts" className="three-d">
             Home
               <span aria-hidden="true" className="three-d-box">
@@ -189,6 +186,7 @@ class NavTop extends React.Component {
                 <span id="back">Register</span>
               </span>
             </NavLink ></NavItem>
+            </div>
 
           </Nav>
         </Navbar>
