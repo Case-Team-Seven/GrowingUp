@@ -132,9 +132,10 @@ router.post("/add", function(req, res) {
     connection.query(sql, [post.title, post.body, post.user_id, post.topic_id],  function(err, result){
         if(err) throw err;
         console.log("1 record inserted");
+        res.json(result);
+
     });
 
-    res.json(post);
 });
 
 
