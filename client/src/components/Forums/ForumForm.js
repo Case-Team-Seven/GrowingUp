@@ -126,7 +126,7 @@ class ForumForm extends Component {
                     </FormText>
                 </FormGroup>
                 <br></br>
-                <Button type="submit" className="formSubmitButton">Submit data</Button> 
+                <Button type="submit" href="/topics/1/posts" className="formSubmitButton">Submit</Button> 
             </Form>
 
             

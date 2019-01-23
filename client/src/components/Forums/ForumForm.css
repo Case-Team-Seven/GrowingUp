@@ -42,7 +42,11 @@ h2 {
 }
 
 .formSubmitButton {
-    margin-left:2em;
+    margin-left: 2em;
+    border: 2px purple solid;
+    background-color: silver;
+    font-size: 19px;
+    margin-bottom: 13px;
 }
 
 hr {
@@ -50,3 +54,4 @@ hr {
     width: 1125px;
     
 }
+
