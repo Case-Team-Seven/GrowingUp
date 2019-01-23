@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 
+
+
 export default withAuth(
   class Navigation extends React.Component {
     constructor(props) {
@@ -21,10 +23,14 @@ export default withAuth(
     componentDidUpdate() {
       this.checkAuthentication();
     }
+    
 
     render() {
+      
       if (this.state.authenticated === null) return null;
+
       const authNav = this.state.authenticated ? (
+        
         <ul className="auth-nav">
           <li>
             <a
@@ -54,7 +60,10 @@ export default withAuth(
         </ul>
       );
       return (
+       
+       
         <nav>
+          
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -66,3 +75,5 @@ export default withAuth(
     }
   }
 );
+
+
