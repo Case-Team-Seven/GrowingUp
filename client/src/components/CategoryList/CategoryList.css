@@ -26,7 +26,7 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
-    border: 5px solid black;
+    border: 5px solid #007bff;
 }
 /* 
 hr {
@@ -35,7 +35,8 @@ hr {
 } */
 
 h2 {
-    color: #0F292F;;
+    color: #0F292F;
+   
 }
 
 .a {
@@ -57,5 +58,7 @@ a {
 
 #catListH2{
     margin-top: 1em;
-    font-size: 22px;
+    font-size: 38px;
+    font-family: 'Baloo Thambi', cursive;
+    margin-left: 0.2em;
 }
