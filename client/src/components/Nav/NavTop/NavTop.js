@@ -182,18 +182,16 @@ class NavTop extends React.Component {
                 <span id="back">{button}</span>
               </span>
             </NavLink ></NavItem> 
-            
+            <NavItem className="navItem"><NavLink href="/register" className="three-d">
+            Register 
+              <span aria-hidden="true" className="three-d-box">
+                <span id="front">Register</span>
+                <span id="back">Register</span>
+              </span>
+            </NavLink ></NavItem>
           </Nav>
         </Navbar>
       )
-    });
-
+    }
+  }
 export default withAuth(NavTop);
-
-// const NavTop = props => {
-//   <LinkItem>{props.loginbyali}</LinkItem>
-// }
-
-// in the parent component 
-// loginbyali = user ? "logout" : "login"
-//
