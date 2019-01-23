@@ -97,7 +97,7 @@ class ForumForm extends Component {
         return (
             <Form className="forumForm" onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="title" for="exampleText"><h2>Title:</h2> </Label>
+                    <Label htmlFor="title" for="exampleText"><h2>Question:</h2> </Label>
                     <Input type="textarea" name="text" onChange={this.handleTitle} value={this.state.title} id="exampleTextTitle" />
                 </FormGroup>
                 <br></br>
