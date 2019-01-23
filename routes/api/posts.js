@@ -90,7 +90,7 @@ router.get("/:id", function(req, res) {
 
 router.get("/topics/:id", function(req, res) {
 
-    const sql = "select posts.id, posts.body, posts.user_id, posts.topic_id, posts.updated, posts.created, posts.score, t.title as topicName from posts\n" +
+    const sql = "select posts.id, posts.title, posts.body, posts.user_id, posts.topic_id, posts.updated, posts.created, posts.score, t.title as topicName from posts\n" +
         "join topics t ON posts.topic_id = t.id\n" +
         "where posts.topic_id = " + req.params.id;
 
