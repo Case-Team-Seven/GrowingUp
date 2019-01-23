@@ -69,7 +69,8 @@ class TopicPosts extends Component  {
                                                     </CardText>
                                                     {/* <Button>This is where the imported comment button may go</Button> */}
                                                     <div>
-                                                        <i class="fas fa-user">Users username here</i>
+                                                        <i className="fas fa-user">{post.username}</i>
+                                                        <i className="fas fa-comment">Comments: {post.commentCount}</i>
                                                     </div>
                                                 </Card>
                                             </Link>

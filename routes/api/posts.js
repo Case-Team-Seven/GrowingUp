@@ -75,9 +75,12 @@ router.get("/:id", function(req, res) {
 
 //get all posts for a topic
 // api/posts/topics/id
+
 // router.get("/topics/:id", function(req, res) {
 //
-//     const sql = "SELECT * FROM posts WHERE topic_id = "+ req.params.id;
+//     const sql = "select posts.id, posts.title, posts.body, posts.user_id, posts.topic_id, posts.updated, posts.created, posts.score, t.title as topicName from posts\n" +
+//         "join topics t ON posts.topic_id = t.id\n" +
+//         "where posts.topic_id = " + req.params.id;
 //
 //     connection.query(sql, function(err, results) {
 //         if (err) throw err;
@@ -90,9 +93,21 @@ router.get("/:id", function(req, res) {
 
 router.get("/topics/:id", function(req, res) {
 
-    const sql = "select posts.id, posts.title, posts.body, posts.user_id, posts.topic_id, posts.updated, posts.created, posts.score, t.title as topicName from posts\n" +
-        "join topics t ON posts.topic_id = t.id\n" +
-        "where posts.topic_id = " + req.params.id;
+    const sql = "select\n" +
+        " p.id,\n" +
+        " p.title,\n" +
+        " p.body,\n" +
+        " p.user_id,\n" +
+        " p.topic_id,\n" +
+        " p.created,\n" +
+        " p.updated,\n" +
+        "(select count(*) from comments c where p.id = c.post_id) as commentCount,\n" +
+        "(select topics.title  from topics where p.topic_id = topics.id) as topicTitle,\n" +
+        "(select users.username  from users where p.user_id = users.id) as username\n" +
+        "from posts p\n" +
+        "where p.topic_id = " + req.params.id +"\n" +
+        "group by p.id, p.title, p.body, p.user_id, p.topic_id, p.created, p.updated, topicTitle, username\n" +
+        "order by created desc;"
 
     connection.query(sql, function(err, results) {
         if (err) throw err;
