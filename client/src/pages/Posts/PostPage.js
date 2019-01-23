@@ -103,7 +103,7 @@ class PostPage extends Component  {
 
             <Container>
                 <div>
-                    <NavTop />
+                    <NavTop id="block-menue" />
                 </div>
                 <Row id="testRow">
                     <Col sm="6">
@@ -112,7 +112,7 @@ class PostPage extends Component  {
 
 
                         <Jumbotron>
-                            <Card body>
+                            <Card body className="card-bodyPostPage">
                                <CardTitle> {this.state.post.title}</CardTitle>
                                 <CardText>{this.state.post.body}</CardText>
                                 
@@ -129,7 +129,7 @@ class PostPage extends Component  {
                                     <Input  rows={10} cols={100} type="textarea" name="text" onChange={this.handleComment} value={this.state.comment} id="commentText" />
                                 </FormGroup>
 
-                                <Button type="submit" className="formSubmitButton">Add Comment</Button>
+                                <Button type="submit" className="formSubmitButton" >Add Comment</Button>
                             </Form>
 
                             <ListGroup>
@@ -137,17 +137,17 @@ class PostPage extends Component  {
                                 {
                                     this.state.comments.map(comment =>
 
-                                       
+
                                     <ListGroupItem 
                                         key={comment.id} 
                                         value={comment.id} className="triangle-right" > 
-                                            <p className="triangle-right">
-                                                {/* <p class="triangle-right">[text]</p>  */}
-                                                {comment.body} :: <br></br>
-                                                CREATED: {comment.created}<br>
-                                                </br> 
-                                                ::: UPDATED: {comment.updated}
-                                            </p>
+                                                                                            {/* <p class="triangle-right">[text]</p>  */}
+                                                <h3 className="commentBody">{comment.body}</h3>
+                                                <br></br>
+                                                <h6 className="commentDate">Created on: {comment.created}
+
+                                                <br></br>Updated: {comment.updated}
+                                          </h6>
                                         </ListGroupItem>
 
                                     )}
