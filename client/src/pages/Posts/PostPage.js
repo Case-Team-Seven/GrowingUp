@@ -11,7 +11,7 @@ import {
     Button,
     CardTitle,
     CardText,
-    Form, FormGroup, Label, Input, FormText, 
+    Form, FormGroup, Label, Input
 } from 'reactstrap';
 import './../../components/Forums/ForumPost.css';
 import NavTop from './../../components/Nav/NavTop/NavTop';
@@ -63,7 +63,7 @@ class PostPage extends Component  {
 
         }
 
-        console.log(" HANDLE SUBMIT ADD COMMENT");
+        // console.log(" HANDLE SUBMIT ADD COMMENT");
 
         API.addComment(data)
             .then(API.getAllCommentsForAPost(this.props.match.params.id)
@@ -78,7 +78,7 @@ class PostPage extends Component  {
         console.log("PREV STATE", prevState.comments);
         // Typical usage (don't forget to compare props):
         if(this.state.comments.length !== this.state.comments.length) {
-            console.log("STATES HAVE CHANGED", prevState.comments , this.state.comments);
+            // console.log(" staesHAVE CHANGED", prevState.comments , this.state.comments);
             API.getAllCommentsForAPost(this.props.match.params.id)
                 .then(res =>  this.setState({ comments: res.data}))
 
@@ -113,7 +113,7 @@ class PostPage extends Component  {
 
                         <Jumbotron>
                             <Card body>
-                                <CardTitle>{this.state.post.title}</CardTitle>
+                               <CardTitle> {this.state.post.title}</CardTitle>
                                 <CardText>{this.state.post.body}</CardText>
                                 
                                   <Link id="userProfileLink" to={"/userProfile/:id"}><i class="fas fa-user"> User: {this.state.post.username}</i></Link>
@@ -126,7 +126,7 @@ class PostPage extends Component  {
                             <Form className="forumForm" onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label htmlFor="title" for="exampleText"><h2>Leave a comment:</h2> </Label>
-                                    <Input type="textarea" name="text" onChange={this.handleComment} value={this.state.comment} id="commentText" />
+                                    <Input  rows={10} cols={100} type="textarea" name="text" onChange={this.handleComment} value={this.state.comment} id="commentText" />
                                 </FormGroup>
 
                                 <Button type="submit" className="formSubmitButton">Add Comment</Button>
