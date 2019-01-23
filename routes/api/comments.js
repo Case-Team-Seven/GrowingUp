@@ -41,7 +41,8 @@ router.get("/posts/:id", function(req, res) {
     connection.query(sql, function(err, results) {
         if (err) throw err;
 
-        res.json(results)
+        // console.log("commments for post" + req.params.id, results)
+       return  res.json(results)
 
     });
 

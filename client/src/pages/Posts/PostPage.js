@@ -34,11 +34,9 @@ class PostPage extends Component  {
         API.getOnePost(this.props.match.params.id)
             .then(res =>  this.setState({ post: res.data}))
 
-    .then(
-        API.getAllCommentsForAPost(this.props.match.params.id)
-            .then(res =>  this.setState({ comments: res.data}))
-
-        ).catch(err => console.log(err))
+            .then(API.getAllCommentsForAPost(this.props.match.params.id)
+            .then(res =>  this.setState({ comments: res.data})))
+            .catch(err => console.log(err))
     };
 
 
@@ -64,26 +62,28 @@ class PostPage extends Component  {
             // created: now,
             // updated: now,
 
-
-            // file: this.state.file
         }
 
-        //this isnt capturing your data. you need to grab it from your form inputs
-        // console.log(data);
         console.log(" HANDLE SUBMIT ADD COMMENT");
 
-        // axios.post('/api/posts/add', data).then((res)=>{console.log(res.data.errors)})
-        API.addComment(data).then((res)=>{console.log(res.data.errors)})
+        API.addComment(data)
+            .then(API.getAllCommentsForAPost(this.props.match.params.id)
+            .then(res =>  this.setState({ comments: res.data})))
+            .then((res)=>{console.log(res.data.errors)})
             .catch(error => console.log(error))
 
     };
 
 
     componentDidUpdate(prevState) {
+        console.log("PREV STATE", prevState.comments);
         // Typical usage (don't forget to compare props):
-        if (this.state.comments !== prevState.comments) {
+        if(this.state.comments.length !== this.state.comments.length) {
+            console.log("STATES HAVE CHANGED", prevState.comments , this.state.comments);
             API.getAllCommentsForAPost(this.props.match.params.id)
                 .then(res =>  this.setState({ comments: res.data}))
+
+        .catch(err => console.log(err))
         }
     }
 
@@ -97,6 +97,7 @@ class PostPage extends Component  {
     render() {
         // console.log("render function (this.state.post): ", this.state.post)
         // console.log("render function (this.state.comments): ", this.state.comments)
+        console.log("this.state.comments.length" , this.state.comments.length)
 
         return (
 
@@ -132,9 +133,22 @@ class PostPage extends Component  {
                             </Form>
 
                             <ListGroup>
+                                
                                 {
                                     this.state.comments.map(comment =>
-                                        <ListGroupItem key={comment.id} value={comment.id}>  {comment.body} :: CREATED: {comment.created} ::: UPDATED: {comment.updated} </ListGroupItem>
+
+                                       
+                                    <ListGroupItem 
+                                        key={comment.id} 
+                                        value={comment.id} className="triangle-right" > 
+                                            <p className="triangle-right">
+                                                {/* <p class="triangle-right">[text]</p>  */}
+                                                {comment.body} :: <br></br>
+                                                CREATED: {comment.created}<br>
+                                                </br> 
+                                                ::: UPDATED: {comment.updated}
+                                            </p>
+                                        </ListGroupItem>
 
                                     )}
 
