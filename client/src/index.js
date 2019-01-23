@@ -8,6 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Security } from '@okta/okta-react';
 import config from './app.config';
 //import unregister from './serviceWorker.js';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function onAuthRequired({ history }) {
   history.push('/login');

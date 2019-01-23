@@ -80,10 +80,10 @@
 /* basic menu styles */
 .block-menu {
 	display: block;
-    background: #0F292F;
     width: 100%;
     position: fixed;
     z-index: 1;
+    background: #f9f9f9;
     margin-top: -0.13em;
 }
 
@@ -93,15 +93,14 @@
 
 .block-menu li a {
 	color: #fff;
-	display: block;
-	text-decoration: none;
-	font-family: 'Passion One', Arial, sans-serif;
-	/* font-smoothing: antialiased; */
-	text-transform: uppercase;
-	overflow: visible;
-	line-height: 20px;
-	font-size: 24px;
-	padding: 15px 10px;
+    display: block;
+    text-decoration: none;
+    font-family: 'Passion One', Arial, sans-serif;
+    text-transform: uppercase;
+    overflow: visible;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 15px 10px;
 }
 
 /* animation domination */
@@ -158,22 +157,22 @@
 	box-sizing: border-box;
 }
 
-.block-menu li {
+/* .block-menu li {
 	display: inline-block;
-}
+} */
 
-.block-menu li a {
+/* .block-menu li a {
 	color: #fff;
 	display: block;
 	text-decoration: none;
 	font-family: 'Passion One', Arial, sans-serif;
-	/* font-smoothing: antialiased; */
+	font-smoothing: antialiased;
 	text-transform: uppercase;
 	overflow: visible;
 	line-height: 20px;
 	font-size: 24px;
 	padding: 15px 10px;
-}
+} */
 
 /* animation domination */
 .three-d {
@@ -242,3 +241,13 @@
 	 margin-right: 50px;
 	 float:right
  }
+
+ /* .fadeout {
+    position: relative; 
+    bottom: 4em;
+    height: 4em;
+    background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    ); 
+}  */
