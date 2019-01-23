@@ -1,15 +1,14 @@
 
 #card {
     background-color: transparent;
-    border: #14A098 3px solid;
-    color:#0F292F;
+    border: #CB2D6F 3px solid;
+    color: #0F292F;
     margin-left: 26em;
     margin-right: 22em;
-  
-    padding: 2.25rem;
+    padding: 4.25rem;
     position: relative;
-    width: 42em;
-    -webkit-margin-before: 0.1em;
+    width: 60em;
+    -webkit-margin-before: 1.6em;
 }
 #card:hover {
 
@@ -33,9 +32,26 @@
 
 #questionOfPost {
     padding-left: 3em;
+    
+    font-size: 15px;
 }
 
 #categoryTitle {
-    margin-left: 21em;
+    margin-left: 14em;
+    /* margin-top: -3em; */
+    font-size: 46px;
+    color: black;
+    font-style: normal;
     margin-top: -1em;
+    font-weight: 600;
+    padding-bottom: 1em;
+    font-family: 'Baloo Thambi', cursive;
+    
+} 
+
+h2 {
+    font-size: 33px;
+    line-height: 1.5;
+    font-weight: bold;
 }
+

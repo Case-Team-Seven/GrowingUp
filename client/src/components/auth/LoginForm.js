@@ -60,10 +60,14 @@ export default withAuth(
       ) : null;
 
       return (
+        
         <Form onSubmit={this.handleSubmit} className="LoginPageDiv">
           {errorMessage}
+          <h1 className="loginTitle">Login</h1>
+
           <FormGroup className="userLogDiv">
-            <Label>Username: </Label>
+            
+            <Label className="loginLabel">Username: </Label>
             <Input
               id="username"
               type="text"
@@ -73,7 +77,7 @@ export default withAuth(
           </FormGroup>
 
           <div className="passwordLogDiv">
-            <label>Password: </label>
+            <label className="loginLabel" >Password: </label>
             <input
               id="password"
               type="password"
@@ -82,6 +86,8 @@ export default withAuth(
             />
           </div>
           <input id="submit" type="submit" value="Submit" className="LoginBtn" />
+          <hr></hr>
+          <h4>New to the site? Create an account! <a href="/register"><h2>Sign Up</h2></a>  </h4>
         </Form>
       );
     }
