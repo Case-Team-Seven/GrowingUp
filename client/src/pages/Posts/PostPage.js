@@ -33,7 +33,6 @@ class PostPage extends Component  {
         // console.log("Component did mount (this): ", this)
         API.getOnePost(this.props.match.params.id)
             .then(res =>  this.setState({ post: res.data}))
-
             .then(API.getAllCommentsForAPost(this.props.match.params.id)
             .then(res =>  this.setState({ comments: res.data})))
             .catch(err => console.log(err))

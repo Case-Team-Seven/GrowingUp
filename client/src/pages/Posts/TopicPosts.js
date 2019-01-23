@@ -18,7 +18,9 @@ class TopicPosts extends Component  {
     componentDidMount() {
         // console.log("Component did mount (this): ", this)
         API.getAllPostsForTopic(this.props.match.params.id)
-            .then(res =>  this.setState({ posts: res.data, topicName: res.data[0].topicName}))
+            .then(res =>  this.setState({ posts: res.data}))
+            .then(API.getTopic(this.props.match.params.id)
+                .then(res =>  this.setState({ topicName: res.data.title})))
             .catch(err => console.log(err));
     }
 
