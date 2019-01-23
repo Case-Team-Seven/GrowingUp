@@ -75,9 +75,24 @@ router.get("/:id", function(req, res) {
 
 //get all posts for a topic
 // api/posts/topics/id
+// router.get("/topics/:id", function(req, res) {
+//
+//     const sql = "SELECT * FROM posts WHERE topic_id = "+ req.params.id;
+//
+//     connection.query(sql, function(err, results) {
+//         if (err) throw err;
+//
+//         res.json(results)
+//
+//     });
+//
+// });
+
 router.get("/topics/:id", function(req, res) {
 
-    const sql = "SELECT * FROM posts WHERE topic_id = "+ req.params.id;
+    const sql = "select posts.id, posts.body, posts.user_id, posts.topic_id, posts.updated, posts.created, posts.score, t.title as topicName from posts\n" +
+        "join topics t ON posts.topic_id = t.id\n" +
+        "where posts.topic_id = " + req.params.id;
 
     connection.query(sql, function(err, results) {
         if (err) throw err;

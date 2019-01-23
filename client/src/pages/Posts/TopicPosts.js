@@ -10,14 +10,15 @@ import CategoryList from "./../../components/CategoryList/CategoryList";
 
 class TopicPosts extends Component  {
     state = {
-        posts: []
+        posts: [],
+        topicName:  ''
     };
 
     
     componentDidMount() {
         // console.log("Component did mount (this): ", this)
         API.getAllPostsForTopic(this.props.match.params.id)
-            .then(res =>  this.setState({ posts: res.data}))
+            .then(res =>  this.setState({ posts: res.data, topicName: res.data[0].topicName}))
             .catch(err => console.log(err));
     }
 
@@ -42,7 +43,7 @@ class TopicPosts extends Component  {
                     <NewPostButton />
                     
                         <ListGroup>
-                        <h1 id="categoryTitle">Category Title</h1>
+                        <h1 id="categoryTitle">{this.state.topicName}</h1>
                             {
                             this.state.posts.map(post =>
                                     //instead of listgroup, this will be the card component , first pull in the react strap elements you imported in forumpost , then insdie of list group tag or chnage it completely to match the card tags you need.
