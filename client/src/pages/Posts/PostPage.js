@@ -117,7 +117,7 @@ class PostPage extends Component  {
                                <CardTitle> {this.state.post.title}</CardTitle>
                                 <CardText>{this.state.post.body}</CardText>
                                 
-                                  <Link id="userProfileLink" to={"/userProfile/:id"}><i class="fas fa-user"> User: {this.state.post.username}</i></Link>
+                                  <i class="fas fa-user"> User: {this.state.post.username}</i>
                                 
 
                             </Card>
