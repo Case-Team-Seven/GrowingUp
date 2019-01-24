@@ -61,7 +61,7 @@ class App extends Component {
             <Router>
                 <Security issuer='https://dev-336569.oktapreview.com/oauth2/default'
                           client_id='0oaj1jfs16YgQs7LW0h7'
-                          redirect_uri={window.location.origin + '/implicit/callback'}
+                          redirect_uri={'https://grownupish.herokuapp.com/implicit/callback'}
                           onAuthRequired={onAuthRequired} >
                     <Route path='/' exact={true} component={Home} />
                     {/* <SecureRoute path='/protected' component={Protected} /> */}
