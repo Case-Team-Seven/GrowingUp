@@ -122,7 +122,7 @@ class PostPage extends Component  {
 
                             </Card>
 
-                            <Form className="forumForm" onSubmit={this.handleSubmit}>
+                            <Form  className="forumFormForCommenting" onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label htmlFor="title" for="exampleText"><h2>Leave a comment:</h2> </Label>
                                     <Input  rows={10} cols={100} type="textarea" name="text" onChange={this.handleComment} value={this.state.comment} id="commentText" />
@@ -143,8 +143,8 @@ class PostPage extends Component  {
                                                                                             {/* <p class="triangle-right">[text]</p>  */}
                                                 <h3 className="commentBody">{comment.body}</h3>
                                                 <br></br>
+                                        <h6 className="commentDate" ><i className="fas fa-user second"> {comment.username}</i> </h6>
                                         <h6 className="commentDate">{dateFns.format(comment.created, 'MM-DD-YYYY')} </h6>
-                                       <h6 className="commentDate" ><i className="fas fa-user"></i> {comment.username} </h6>
                                         </ListGroupItem>
 
                                     )}
